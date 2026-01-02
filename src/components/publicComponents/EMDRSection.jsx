@@ -68,25 +68,8 @@ const EMDRSection = ({
 
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
 
-                <div className="relative  flex items-center justify-center ">
-                  <div className="w-16 h-16 bg-[#568261] rounded-full flex items-center justify-center text-white shadow-lg">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-8 h-8 ml-1"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                </div>
               </div>
             ) : (
-              /* ভিডিও প্লেয়ার */
               <video
                 src={videoSrc}
                 poster={thumbnailSrc}
