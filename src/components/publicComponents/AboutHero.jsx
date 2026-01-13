@@ -1,28 +1,4 @@
-// import React from "react";
 
-// const AboutHero = () => {
-//   return (
-//     <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#fdfdfb]">
-//       <div
-//         style={{
-//           backgroundImage: "url('/homeImage/lightstream 1.png')",
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           backgroundRepeat: "no-repeat",
-//         }}
-//         className="absolute inset-0 z-0 "
-//       >
-//         <div>
-//           <button>About InKind EMDR</button>
-//           <h1>Our Mission</h1>
-//           <p>Making Healing Accessible for Everyone</p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default AboutHero;
 
 
 "use client";
@@ -57,7 +33,7 @@ const AboutHero = ({
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center gap-4 md:gap-6"
         >
-          {/* Tag / Button */}
+
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

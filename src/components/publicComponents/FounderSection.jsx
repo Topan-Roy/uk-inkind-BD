@@ -16,7 +16,7 @@ const FounderSection = () => {
   return (
     <section className="bg-[#FCF9F4] py-16 md:py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 lg:gap-20">
-        {/* Left Side: Text Content */}
+
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -54,7 +54,7 @@ const FounderSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex-1 relative w-full max-w-[500px] md:max-w-none"
         >
-          {/* Background Decorative Blobs */}
+
           <motion.div
             animate={{
               scale: [1, 1.05, 1],
@@ -66,7 +66,6 @@ const FounderSection = () => {
 
           <div className="absolute -inset-2 bg-[#568261]/5 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] -z-10"></div>
 
-          {/* Main Image with Animation */}
           <motion.div
             animate={{
               y: [0, -15, 0],
@@ -88,7 +87,7 @@ const FounderSection = () => {
             />
           </motion.div>
 
-          {/* Floating Blur Circle */}
+
           <motion.div
             animate={{
               x: [0, 15, 0],

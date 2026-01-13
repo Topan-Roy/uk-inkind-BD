@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
 const ClinicCTA = () => {
-  // Dynamic Content Data
+
   const clinicData = {
     title: "Want traditional face-to-face or online therapy?",
     description:
@@ -29,7 +29,7 @@ const ClinicCTA = () => {
           }}
           className="p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-8"
         >
-          {/* Text Content */}
+
           <div className=" text-left">
             <h2
               style={{ color: "#2D312D" }}
