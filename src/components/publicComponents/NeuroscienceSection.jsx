@@ -33,7 +33,7 @@ const NeuroscienceSection = () => {
   };
 
   return (
-    <section className="relative w-full py-20 bg-[#FDFBF7] overflow-hidden px-6">
+    <section className="relative w-full py-20 bg-[#FCF9F4] overflow-hidden px-6">
       <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
         {/* Title & Subtitle */}
         <div className="text-center mb-16">

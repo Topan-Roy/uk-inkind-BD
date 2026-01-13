@@ -32,7 +32,7 @@ const WhoIsItFor = () => {
       percentage: "30-62%",
       subText: "significant improvement",
       description: "Equivalent to CBT (gold-standard treatment)",
-      icon: " /homeImage/Container1.svg",
+      icon: "/homeImage/Container1.svg",
     },
     {
       title: "Chronic Pain",
