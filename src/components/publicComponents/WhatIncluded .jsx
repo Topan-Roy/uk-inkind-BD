@@ -48,7 +48,7 @@ const WhatIncluded = () => {
       percentage: "67%",
       subText: "show significant improvement",
       description:
-        "Play Tetris. Take a Stroop test. These cognitive games create 'working memory overload' that helps your brain reprocess trauma.",
+        "Play Tetris Take a Stroop test. These cognitive games create 'working memory overload' that helps your brain reprocess trauma.",
       icon: "/homeImage/Container.png",
     },
   ];
