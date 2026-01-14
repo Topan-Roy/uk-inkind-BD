@@ -27,7 +27,7 @@ const HowThisActually = ({ desktopImage = "/homeImage/image1.png" }) => {
   };
 
   return (
-    <section className="relative w-full py-10 bg-[#FCF9F4] md:bg-transparent flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full py-10  flex flex-col items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 z-0 hidden md:block bg-cover bg-center bg-no-repeat opacity-30"
         style={{
