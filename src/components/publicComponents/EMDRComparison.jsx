@@ -11,7 +11,7 @@ const EMDRComparison = () => {
   ];
 
   return (
-    <div className="bg-[#FAF7F2] min-h-screen py-12 px-4 font-serif">
+    <div className=" min-h-screen py-12 px-4 font-serif">
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
