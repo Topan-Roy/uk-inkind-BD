@@ -82,7 +82,7 @@ const HomeHero = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-10"
           >
-            <Link href="/register">
+            <Link href="/GetStarted">
               <button className="bg-[#56825e] hover:bg-[#456b4c] text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-[#56825e]/30 active:scale-95">
                 Get Started Today
               </button>
