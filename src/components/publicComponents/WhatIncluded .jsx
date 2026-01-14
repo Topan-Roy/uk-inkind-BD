@@ -43,6 +43,8 @@ const WhatIncluded = () => {
         "Work specifically on thoughts, feelings and behaviours with engaging exercises that take your journey further.",
       icon: "/homeImage/Container.png",
     },
+
+    
     {
       title: "EMDR 2.0 - Brain Training That Actually Helps",
       percentage: "67%",
