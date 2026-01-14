@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -30,7 +29,11 @@ const PricingSection = () => {
       price: "£75",
       duration: "/month",
       subText: "Best value for consistent healing",
-      features: ["Includes homework", "Progress tracking", "Full program access"],
+      features: [
+        "Includes homework",
+        "Progress tracking",
+        "Full program access",
+      ],
       buttonText: "Get Started",
       recommended: true,
     },
@@ -55,10 +58,9 @@ const PricingSection = () => {
   return (
     <section className="bg-[#FCF9F4] py-24 px-6 md:px-10">
       <div className="max-w-[90%] mx-auto">
-        
         {/* Header Content */}
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -66,18 +68,19 @@ const PricingSection = () => {
           >
             Choose the Plan That’s Right for You
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-[#6E8B7A] text-xl font-medium"
           >
-            Flexible pricing options to support your healing journey – cancel anytime.
+            Flexible pricing options to support your healing journey – cancel
+            anytime.
           </motion.p>
         </div>
 
-        <div className="block md:flex gap-4 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 items-stretch ">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -85,15 +88,15 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative bg-white rounded-[20px] p-6 flex flex-col transition-all duration-300 ${
-                plan.recommended 
-                  ? "border-[2.5px] border-black scale-105 z-10 shadow-xl" 
+              className={`relative bg-white rounded-[20px] p-6 flex flex-col transition-all duration-300 w-full ${
+                plan.recommended
+                  ? "border-[2.5px] border-[#4A7C59] scale-105 z-10 shadow-xl"
                   : "border border-gray-200 shadow-sm"
               }`}
             >
               {plan.recommended && (
-                <div className="absolute -top-[9] left-1/2 -translate-x-1/2 bg-white border-[2.5px] border-black px-4 py-0.5 z-20">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-black">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FDC700] rounded-2xl   px-4 py-0.5 z-20">
+                  <span className="text-[14px] text-[#101828] font-semibold  tracking-widest ">
                     Recommended
                   </span>
                 </div>
@@ -101,19 +104,27 @@ const PricingSection = () => {
 
               {/* Top Info */}
               <div className="text-left mb-6">
-                <h3 className="text-lg font-bold text-[#1C2C2E] mb-1">{plan.name}</h3>
+                <h3 className="text-2xl font-semibold text-[#101828] mb-1">
+                  {plan.name}
+                </h3>
                 <div className="flex items-baseline gap-0.5">
-                  <span className="text-3xl font-serif text-[#1C2C2E]">{plan.price}</span>
-                  <span className="text-gray-500 text-[12px] font-medium">{plan.duration}</span>
+                  <span className="text-3xl font-serif text-[#101828]">
+                    {plan.price}
+                  </span>
+                  <span className="text-[#101828] text-[12px] font-medium">
+                    {plan.duration}
+                  </span>
                 </div>
-                <p className="text-gray-600 text-[12px] mt-2 leading-snug min-h-[32px]">
+                <p className="text-[#4A7C59] text-[14px] mt-2 leading-snug min-h-[32px]">
                   {plan.subText}
                 </p>
               </div>
 
               {plan.hasSpots && (
-                <div className="border border-black rounded-lg p-3 mb-6 text-center">
-                  <div className="text-xl font-bold text-[#1C2C2E]">{plan.spots}</div>
+                <div className="border border-[#DBE5DE] bg-[#FFF8F0] rounded-lg p-3 mb-6 text-center">
+                  <div className="text-xl font-bold text-[#1C2C2E]">
+                    {plan.spots}
+                  </div>
                   <div className="text-[9px] text-gray-500 uppercase font-black tracking-tighter">
                     Spots Available
                   </div>
@@ -122,21 +133,21 @@ const PricingSection = () => {
 
               <div className="flex-grow mb-8 space-y-3">
                 {plan.features.map((feature, fIndex) => (
-                  <div key={fIndex} className="flex items-start gap-2">
-                    <Check className="w-3.5 h-3.5 text-black mt-0.5 shrink-0" />
-                    <span className="text-[12px] text-gray-700 leading-tight">
+                  <div key={fIndex} className="flex items-start gap-2 text-[#4A7C59]">
+                    <Check className="w-3.5 h-3.5 text-[#364153] mt-0.5 shrink-0" />
+                    <span className="text-[14px] text-[#364153] leading-tight">
                       {feature}
                     </span>
                   </div>
                 ))}
               </div>
 
-             <div className="mt-auto">
-                <button 
-                  className={`w-full py-2.5 rounded-lg text-[13px] font-bold border-[1.5px] transition-all ${
-                    plan.recommended 
-                    ? "bg-white border-black text-black hover:bg-black hover:text-white" 
-                    : "bg-white border-gray-300 text-gray-700 hover:border-black hover:text-black"
+              <div className="mt-20">
+                <button
+                  className={`w-full py-2.5 rounded-lg text-[16px] font-medium border-[1.5px] border-[#4A7C59] transition-all  ${
+                    plan.recommended
+                      ? "bg-white border-[#4A7C59] text-[#4A7C59] hover:bg-[#456b4c] hover:text-white"
+                      : "bg-white border-gray-300 text-gray-700 hover:border-[#4A7C59] hover:text-[#4A7C59]"
                   }`}
                 >
                   {plan.buttonText}
