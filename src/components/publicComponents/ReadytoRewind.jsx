@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const ReadytoRewind = ({ 
   title = "Ready to Rewind and Reprocess?", 
@@ -39,13 +40,15 @@ const ReadytoRewind = ({
             {subtitle}
           </p>
         </motion.div>
-         <motion.button 
+          <Link href="/authentication/login">
+          <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-[#56825e] hover:bg-[#456b4c] text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-[#56825e]/30 active:scale-95 mt-5"
           >
             {buttonText}
           </motion.button>
+          </Link>
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent pointer-events-none" />
