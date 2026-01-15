@@ -5,7 +5,7 @@ export default function Header() {
     <header className="flex items-center justify-end px-8 py-6 bg-transparent">
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2 bg-white rounded-full p-1 shadow-sm border border-stone-200">
-          <button className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors">
+          <button className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors cursor-pointer">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -20,7 +20,7 @@ export default function Header() {
               />
             </svg>
           </button>
-          <button className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors">
+          <button className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors cursor-pointe">
             <svg
               className="w-5 h-5"
               fill="none"
@@ -41,8 +41,9 @@ export default function Header() {
               />
             </svg>
           </button>
-          <div className="w-8 h-8 bg-pink-100 rounded-full overflow-hidden border border-pink-200">
+          <div className="w-8 h-8 bg-pink-100 rounded-full overflow-hidden border border-pink-200 cursor-pointe">
             <img
+              className="cursor-pointe"
               src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix"
               alt="User"
             />

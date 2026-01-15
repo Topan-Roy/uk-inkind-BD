@@ -8,7 +8,7 @@ export default function DashboardPage() {
       {/* Page Header Area */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-serif text-[#0F1912] font-bold">
+          <h1 className="text-3xl font-serif text-[#0F1912] font-bold mb-5">
             My EMDR
           </h1>
           <p className="text-[#000000] text-sm">Active Journeys</p>

@@ -39,8 +39,8 @@ export default function Sidebar() {
                 href={item.href}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-[#6B9071] text-white shadow-sm"
-                    : "text-white/80 hover:bg-[#6B9071]/50 hover:text-white"
+                    ? "bg-[#6B9071] text-[#FBFBFC] shadow-sm"
+                    : "text-black bg-[#FBFBFC] hover:bg-[#6B9071]/50 hover:text-[#FBFBFC]"
                 }`}
               >
                 {item.name}
@@ -52,7 +52,7 @@ export default function Sidebar() {
         {/* Logout */}
         <div className="mb-50">
           <Link href="/authentication/login">
-            <button className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-white/90 hover:text-white transition-colors w-full bg-white/10 rounded-lg hover:bg-white/20">
+            <button className="flex items-center gap-2 px-4 py-3 text-sm font-medium text-black bg-white hover:bg-[#6B9071]/50 hover:text-[#FBFBFC] transition-colors w-full rounded-lg shadow-sm cursor-pointer">
               <svg
                 className="w-5 h-5"
                 fill="none"
