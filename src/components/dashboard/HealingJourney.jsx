@@ -38,7 +38,7 @@ export default function HealingJourney() {
                 Recent milestones and achievements
               </p>
             </div>
-            <button className="bg-[#F1F5F9] hover:bg-stone-50 text-[#314158] px-6 py-3 rounded-xl font-medium shadow-sm border border-stone-200 transition-colors duration-200">
+            <button className="bg-[#F1F5F9] hover:bg-stone-50 text-[#314158] px-6 py-3 rounded-xl font-medium shadow-sm border border-stone-200 transition-colors duration-200 cursor-pointer">
               View All
             </button>
           </div>
