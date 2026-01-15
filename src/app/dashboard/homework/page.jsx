@@ -1,3 +1,4 @@
+import EMDRCategories from "@/components/dashboard/EMDRCategories";
 import WelcomeSection from "@/components/dashboard/WelcomeSection";
 
 export default function HomeworkPage() {
@@ -10,6 +11,7 @@ export default function HomeworkPage() {
            </h1>
          </div>
         <WelcomeSection></WelcomeSection>
+        <EMDRCategories></EMDRCategories>
        </div>
   );
 }
