@@ -1,13 +1,16 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function RecoverCodePage() {
   const [otp, setOtp] = useState("");
+  const router = useRouter();
 
   const handleOtpSubmit = (e) => {
     e.preventDefault();
     console.log("Verifying OTP:", otp);
+    router.push("/authentication/reset-password");
   };
 
   return (
@@ -27,7 +30,7 @@ export default function RecoverCodePage() {
               <label className="block text-white text-sm mb-2">
                 Recovery Code
               </label>
-                <input
+              <input
                 type="email"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
@@ -36,14 +39,14 @@ export default function RecoverCodePage() {
                 required
               />
             </div>
-
-            <button
-              type="submit"
-              className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
-            >
-              Next
-            </button>
-
+            <Link href="/authentication/reset-password">
+              <button
+                type="submit"
+                className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
+              >
+                Next
+              </button>
+            </Link>
             <div className="text-center mt-4">
               <button
                 type="button"

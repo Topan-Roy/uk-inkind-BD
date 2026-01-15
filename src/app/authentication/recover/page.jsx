@@ -39,13 +39,13 @@ export default function RecoverPage() {
               />
             </div>
             <Link href="/authentication/recover-code">
-            <button
-              type="submit"
-              className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
-            >
-              Send Recovery Email
-            </button>
-</Link>
+              <button
+                type="submit"
+                className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
+              >
+                Send Recovery Email
+              </button>
+            </Link>
             <Link
               href="/authentication/login"
               className="flex items-center justify-center gap-2 text-white/90 hover:text-white transition-colors mt-6 text-sm"
@@ -63,7 +63,7 @@ export default function RecoverPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-            Or continue with
+              Or continue with
             </Link>
           </form>
         </div>
