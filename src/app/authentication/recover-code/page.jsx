@@ -1,15 +1,13 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
-export default function RecoverPage() {
-  const [email, setEmail] = useState("");
-  const router = useRouter();
+export default function RecoverCodePage() {
+  const [otp, setOtp] = useState("");
 
-  const handleEmailSubmit = (e) => {
+  const handleOtpSubmit = (e) => {
     e.preventDefault();
-    router.push("/authentication/recover-code");
+    console.log("Verifying OTP:", otp);
   };
 
   return (
@@ -24,28 +22,37 @@ export default function RecoverPage() {
               Enter your email and we will send you a recovery code
             </p>
           </div>
-          <form onSubmit={handleEmailSubmit} className="space-y-5">
+          <form onSubmit={handleOtpSubmit} className="space-y-5">
             <div>
               <label className="block text-white text-sm mb-2">
-                Email Address
+                Recovery Code
               </label>
-              <input
+                <input
                 type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your e-mail address"
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                placeholder="Recovery Code"
                 className="w-full px-4 py-3 rounded-lg bg-transparent border border-white/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
                 required
               />
             </div>
-            <Link href="/authentication/recover-code">
+
             <button
               type="submit"
               className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
             >
-              Send Recovery Email
+              Next
             </button>
-</Link>
+
+            <div className="text-center mt-4">
+              <button
+                type="button"
+                className="text-white/90 text-sm hover:underline"
+              >
+                Didn't receive the code? Resend
+              </button>
+            </div>
+
             <Link
               href="/authentication/login"
               className="flex items-center justify-center gap-2 text-white/90 hover:text-white transition-colors mt-6 text-sm"
@@ -63,7 +70,7 @@ export default function RecoverPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-            Or continue with
+              Back to Login
             </Link>
           </form>
         </div>
