@@ -1,10 +1,20 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // In a real app, you would validate credentials here
+    router.push("/dashboard");
+  };
+
   return (
     <div className="min-h-screen flex">
       <div className="w-1/2 bg-[#4A7C59] flex items-center justify-center px-16">
@@ -22,7 +32,7 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-          <form className="space-y-5">
+          <form onSubmit={handleLogin} className="space-y-5">
             <div>
               <label className="block text-white text-sm mb-2">
                 Enter your e-mail address
