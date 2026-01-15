@@ -1,28 +1,43 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-export default function LoginPage() {
+export default function SignupPage() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   return (
     <div className="min-h-screen flex">
-      <div className="w-1/2 bg-[#4A7C59] flex items-center justify-center px-16">
+      <div className="w-1/2 bg-[#4A7C59] flex items-center justify-center px-16 py-12">
         <div className="w-full max-w-md">
           <div className="mb-8">
             <h1 className="text-[#FFFFFF] text-3xl font-normal mb-2">
-              Login to your account
+              Create an account
             </h1>
             <p className="text-white/90 text-[14px]">
-              Don't have an account?{" "}
-              <Link href="/authentication/signup">
+              Already have an account?{" "}
+              <Link href="/authentication/login">
                 <button className="font-semibold hover:underline text-[18px] text-[#FFE6C9]">
-                  Sign Up
+                  Login
                 </button>
               </Link>
             </p>
           </div>
-          <form className="space-y-5">
+          <form className="space-y-4">
+            <div>
+              <label className="block text-white text-sm mb-2">
+                Enter your Name
+              </label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Enter your Name"
+                className="w-full px-4 py-3 rounded-lg bg-transparent border border-white/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+              />
+            </div>
             <div>
               <label className="block text-white text-sm mb-2">
                 Enter your e-mail address
@@ -36,13 +51,25 @@ export default function LoginPage() {
               />
             </div>
             <div>
+              <label className="block text-white text-sm mb-2">
+                Enter your phone number
+              </label>
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Enter your phone number"
+                className="w-full px-4 py-3 rounded-lg bg-transparent border border-white/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+              />
+            </div>
+            <div>
               <label className="block text-white text-sm mb-2">Password</label>
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
+                  placeholder="Enter your Password"
                   className="w-full px-4 py-3 rounded-lg bg-transparent border border-white/40 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent pr-12"
                 />
                 <button
@@ -75,20 +102,26 @@ export default function LoginPage() {
                 </button>
               </div>
             </div>
-            <div className="text-left">
-              <button
-                type="button"
-                className="text-[#FF8787] text-sm hover:underline"
-              >
-                Forgot Password?
-              </button>
+            <div className="flex items-center">
+              <input
+                id="privacy"
+                type="checkbox"
+                checked={privacyAccepted}
+                onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                className="w-4 h-4 text-[#FFE6C9] bg-transparent border-white/40 rounded focus:ring-[#FFE6C9] focus:ring-2"
+              />
+              <label htmlFor="privacy" className="ml-2 text-sm text-white/90">
+                Accept{" "}
+                <button type="button" className="underline hover:text-white">
+                  privacy statement
+                </button>
+              </label>
             </div>
-
             <button
               type="submit"
-              className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200"
+              className="w-full text-xl bg-[#FFE6C9] hover:bg-[#eddcc4] text-stone-900 font-semibold py-3 rounded-lg transition-colors duration-200 mt-4"
             >
-              Login
+              Sign up
             </button>
             <div className="relative flex items-center my-6">
               <div className="flex-grow border-t border-white/30"></div>
@@ -148,11 +181,10 @@ export default function LoginPage() {
           </form>
         </div>
       </div>
-
       <div className="w-1/2 bg-white">
         <img
           src="/homeImage/loginimg.png"
-          alt="Login"
+          alt="Signup"
           className="w-full h-full object-cover"
         />
       </div>
