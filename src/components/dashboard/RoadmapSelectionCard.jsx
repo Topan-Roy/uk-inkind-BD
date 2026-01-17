@@ -157,7 +157,7 @@ export default function CreateJourney() {
           <div className="flex justify-end mt-10">
             <button
               onClick={() => router.push("/dashboard/assessments")}
-              className="bg-emerald-700 hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-medium transition-colors duration-200 shadow-lg"
+              className="bg-[#4A7C59] hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-medium transition-colors duration-200 shadow-lg"
             >
               Save & Enter Space
             </button>

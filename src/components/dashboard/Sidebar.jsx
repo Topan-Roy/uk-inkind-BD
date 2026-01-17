@@ -29,11 +29,15 @@ export default function Sidebar() {
           {navItems.map((item) => {
             const isActive =
               item.href === "/dashboard"
-                ? pathname === "/dashboard" ||
-                  pathname.startsWith("/dashboard/assessments") ||
-                  pathname.startsWith("/dashboard/new-roadmap") ||
-                  pathname.startsWith("/dashboard/EMDRCompanion")
-                : pathname === item.href;
+                ? (pathname === "/dashboard" ||
+                    pathname === "/dashboard/assessments" ||
+                    pathname.startsWith("/dashboard/new-roadmap") ||
+                    pathname.startsWith("/dashboard/EMDRCompanion")) &&
+                  !pathname.startsWith("/dashboard/assessments/activity")
+                : item.href === "/dashboard/progress"
+                ? pathname.startsWith("/dashboard/progress") ||
+                  pathname.startsWith("/dashboard/assessments/activity")
+                : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.name}

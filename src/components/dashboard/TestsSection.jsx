@@ -1,4 +1,4 @@
-"use client";
+import Link from "next/link";
 import React from "react";
 
 export default function TestsSection() {
@@ -39,12 +39,14 @@ export default function TestsSection() {
             <h2 className="text-3xl font-serif text-stone-900 mb-4">
               My Tests
             </h2>
-          <p className="text-[#7A7A7A] text-[18px] leading-relaxed mb-8">
-            Take new assessments or retake standard questionnairess
+            <p className="text-[#7A7A7A] text-[18px] leading-relaxed mb-8">
+              Take new assessments or retake standard questionnairess
             </p>
-            <button className="w-full text-[18px] bg-[#4A7C59] hover:bg-[#4a6a4c] text-white font-normal py-4 rounded-xl transition-colors duration-200">
-              View Assessments
-            </button>
+            <Link href="/dashboard/assessments/activity">
+              <button className="w-full text-[18px] bg-[#4A7C59] hover:bg-[#4a6a4c] text-white font-normal py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+                View Assessments
+              </button>
+            </Link>
           </div>
         </div>
 
