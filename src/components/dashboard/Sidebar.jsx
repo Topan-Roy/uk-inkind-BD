@@ -34,7 +34,7 @@ export default function Sidebar() {
                 href={item.href}
                 className={`block px-4 py-3 rounded-lg text-[16px] font-medium transition-colors ${
                   isActive
-                    ? "bg-[#6B9071] text-[#FBFBFC] shadow-sm text-[16px]"
+                    ? "bg-[#4A7C59] text-[#FBFBFC] shadow-sm text-[16px]"
                     : "text-black bg-[#FBFBFC] hover:bg-[#6B9071]/50 hover:text-[#FBFBFC]"
                 }`}
               >

@@ -1,5 +1,4 @@
 "use client";
-
 export default function GriefCard() {
   const journey = {
     title: "Grief and Loss Support",
@@ -9,9 +8,7 @@ export default function GriefCard() {
     sessions: "2/12",
     image: "/homeImage/background.jpg",
   };
-
   const { title, date, lastAccessed, progress, sessions, image } = journey;
-
   return (
     <div className="bg-[#E3E6F0]/10 backdrop-blur-sm rounded-2xl p-4 shadow-sm border border-stone-100 flex gap-6 relative overflow-hidden group hover:shadow-md transition-shadow">
       <div className="relative w-[380px] h-[240px] rounded-xl overflow-hidden flex-shrink-0">
@@ -103,7 +100,7 @@ export default function GriefCard() {
           ></div>
         </div>
 
-        <button className="w-full bg-[#4A7C59] hover:bg-[#4A7C59] text-white py-3 rounded-xl font-medium shadow-sm transition-colors uppercase tracking-wide text-sm">
+        <button className="w-full bg-[#4A7C59] hover:bg-[#4A7C59] text-white py-3 rounded-xl font-medium shadow-sm transition-colors uppercase tracking-wide text-sm cursor-pointer">
           Continue Session
         </button>
       </div>

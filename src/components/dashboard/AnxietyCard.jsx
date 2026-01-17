@@ -103,7 +103,7 @@ export default function AnxietyCard() {
           ></div>
         </div>
 
-        <button className="w-full bg-[#4A7C59] hover:bg-[#4A7C59] text-white py-3 rounded-xl font-medium shadow-sm transition-colors uppercase tracking-wide text-sm">
+        <button className="w-full bg-[#4A7C59] hover:bg-[#4A7C59] text-white py-3 rounded-xl font-medium shadow-sm transition-colors uppercase tracking-wide text-sm cursor-pointer">
           Continue Session
         </button>
       </div>
