@@ -5,7 +5,7 @@ import React from "react";
 
 export default function AssessmentsPage() {
   return (
-    <div className=" bg-[#4B4B4B] rounded-3xl shadow-2xl p-8 lg:p-12 border border-stone-600 w-full">
+    <div className=" bg-[#9a9898] backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 border border-stone-600 w-full">
     <div className="w-full h-full">
         <div className="text-center mb-10">
             <h1 className="text-4xl font-serif text-[#0F1912] mb-3">
@@ -44,11 +44,9 @@ export default function AssessmentsPage() {
               </svg>
             </div>
           </div>
-
-          {/* Card Content */}
           <div className="p-8 text-center">
             <h2 className="text-3xl font-serif text-stone-900 mb-4">
-              My Tests
+            AI Guide
             </h2>
           <p className="text-[#7A7A7A] text-[18px] leading-relaxed mb-8">
             Take new assessments or retake standard questionnairess
@@ -60,10 +58,7 @@ export default function AssessmentsPage() {
             </Link>
           </div>
         </div>
-
-        {/* My Results Card */}
         <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
-          {/* Header Image with Ocean/Sky */}
           <div className="h-48 relative overflow-hidden">
             <img
               src="/homeImage/image2.png"
@@ -93,7 +88,7 @@ export default function AssessmentsPage() {
           {/* Card Content */}
           <div className="p-8 text-center">
             <h2 className="text-3xl font-serif text-stone-900 mb-4">
-              My Results
+             Book Consultation
             </h2>
             <p className="text-[#7A7A7A] text-[18px] leading-relaxed mb-8">
               Visualize your heling journey with graphs and historical data

@@ -32,11 +32,13 @@ export default function Sidebar() {
                 ? (pathname === "/dashboard" ||
                     pathname === "/dashboard/assessments" ||
                     pathname.startsWith("/dashboard/new-roadmap") ||
-                    pathname.startsWith("/dashboard/EMDRCompanion")) &&
+                    pathname.startsWith("/dashboard/EMDRCompanion") ||
+                    pathname.startsWith("/dashboard/AssessmentsF")) &&
                   !pathname.startsWith("/dashboard/assessments/activity")
                 : item.href === "/dashboard/progress"
                 ? pathname.startsWith("/dashboard/progress") ||
-                  pathname.startsWith("/dashboard/assessments/activity")
+                  pathname.startsWith("/dashboard/assessments/activity")||
+                  pathname.startsWith("/dashboard/results")
                 : pathname.startsWith(item.href);
             return (
               <Link

@@ -74,7 +74,7 @@ export default function CreateJourney() {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full">
-        <div className="bg-[#4B4B4B] rounded-3xl shadow-2xl p-8 lg:p-12 border border-stone-600">
+        <div className="bg-[#9a9898] backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 border border-stone-600">
           <div className="text-center mb-10">
             <h1 className="text-4xl font-serif text-[#0F1912] mb-3">
               Create Your Journey

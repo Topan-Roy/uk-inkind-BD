@@ -88,9 +88,11 @@ export default function TestsSection() {
               Visualize your heling journey with graphs and historical data
               trends.
             </p>
-            <button className="w-full text-[18px] bg-[#4A7C59] hover:bg-[#4a6a4c] text-white font-normal py-4 rounded-xl transition-colors duration-200">
-              View Assessments
-            </button>
+            <Link href="/dashboard/results">
+              <button className="w-full text-[18px] bg-[#4A7C59] hover:bg-[#4a6a4c] text-white font-normal py-4 rounded-xl transition-colors duration-200 cursor-pointer">
+                View Assessments
+              </button>
+            </Link>
           </div>
         </div>
       </div>
