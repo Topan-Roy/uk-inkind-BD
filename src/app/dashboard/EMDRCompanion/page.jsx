@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function ResourcesPage() {
+export default function EMDRCompanion() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBeliefs, setSelectedBeliefs] = useState([]);
 
@@ -94,7 +94,6 @@ export default function ResourcesPage() {
                   </div>
                 </div>
               </div>
-              {/* Question Button to trigger Modal */}
               <button
                 onClick={() => setIsModalOpen(true)}
                 className="w-10 h-10 flex items-center justify-center bg-stone-100 hover:bg-stone-200 rounded-full transition-colors shadow-sm group"
@@ -138,36 +137,9 @@ export default function ResourcesPage() {
                 </div>
               ))}
             </div>
-
-            <div className="backdrop-blur-md border-t border-stone-200/50 px-6 py-4">
-              <div className="flex items-center gap-3">
-                <input
-                  type="text"
-                  placeholder="Type your message..."
-                  className="flex-1 px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#4A7C59]/50 text-stone-900 placeholder-stone-400"
-                />
-                <button className="w-12 h-10 rounded-xl bg-[#4A7C59] hover:bg-[#3d6649] text-white flex items-center justify-center transition-all shadow-sm active:scale-95">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-
-      {/* Modal Overlay - Moved outside for stacking context */}
       {isModalOpen && (
         <div
           onClick={() => setIsModalOpen(false)}
@@ -177,7 +149,6 @@ export default function ResourcesPage() {
             onClick={(e) => e.stopPropagation()}
             className="bg-white rounded-3xl shadow-2xl w-full max-w-lg my-auto border border-stone-200 overflow-hidden"
           >
-            {/* Modal Header */}
             <div className="p-8 pb-4 text-center border-b border-stone-100">
               <h2 className="text-2xl font-serif text-stone-900 mb-2">
                 Meet Your EMDR Companion
@@ -186,8 +157,6 @@ export default function ResourcesPage() {
                 Select the negative belief(s) that resonate with you:
               </p>
             </div>
-
-            {/* Modal Content - Belief Selection */}
             <div className="px-8 py-6 max-h-[400px] overflow-y-auto space-y-3 bg-stone-50/60">
               {beliefs.map((belief, idx) => (
                 <button
@@ -228,8 +197,6 @@ export default function ResourcesPage() {
                 </button>
               ))}
             </div>
-
-            {/* Modal Footer */}
             <div className="p-8 space-y-3 border-t border-stone-100 bg-white">
               <button
                 disabled={selectedBeliefs.length === 0}
