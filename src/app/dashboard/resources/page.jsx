@@ -1,251 +1,138 @@
 "use client";
-import { useState } from "react";
+import React from "react";
+import Link from "next/link";
 
-export default function ResourcesPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedBeliefs, setSelectedBeliefs] = useState([]);
-
-  const beliefs = [
-    "I am not good enough",
-    "I am unsafe / I am in danger",
-    "I have no control / I am powerless",
-    "I am unlovable / unwelcome",
-    "I am a failure / I am inadequate",
-    "I am responsible for everything bad",
-    "I don't belong / I am alone",
-  ];
-
-  const toggleBelief = (belief) => {
-    setSelectedBeliefs((prev) =>
-      prev.includes(belief)
-        ? prev.filter((b) => b !== belief)
-        : [...prev, belief]
-    );
-  };
-
-  const [messages] = useState([
-    {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "Mike Preuss, Co-founder and CEO, Visible.vc",
-    },
-    {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "Mike Preuss, Co-founder and CEO, Visible.vc",
-    },
-    {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "",
-    },
-    {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "",
-    },
-    {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "",
-    },
-  ]);
-
+export default function MyResources() {
   return (
-    <>
-      <div className="backdrop-blur-xs border border-white/20 rounded-2xl p-2 relative">
-        <div className="text-center pb-6 mt-5">
-          <h1 className="text-3xl text-[#000000] font-normal mb-3">
-            EMDR Companion
-          </h1>
-          <p className="text-[#000000] text-base leading-relaxed max-w-2xl mx-auto">
-            I'm here to gently guide you through preparing for your first EMDR
-            session.
-            <br />
-            We'll work together at your pace.
-          </p>
-        </div>
-
-        <div className="p-5">
-          <div className="relative backdrop-blur-xs rounded-3xl overflow-hidden shadow-lg border border-white/20">
-            <div className="backdrop-blur-md border-b border-stone-200/50 px-6 py-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-stone-900 flex items-center justify-center">
-                  <div className="w-6 h-6 rounded-full border-2 border-white"></div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="font-medium text-[#0F1912] text-[20px]">
-                    EMDR Companion
-                  </span>
-                  <div className="flex items-center text-[#1EC970]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      stroke="none"
-                      className="lucide lucide-badge-check"
-                    >
-                      <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
-                      <path
-                        d="m9 12 2 2 4-4"
-                        stroke="white"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              {/* Question Button to trigger Modal */}
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="w-10 h-10 flex items-center justify-center bg-stone-100 hover:bg-stone-200 rounded-full transition-colors shadow-sm group"
-                title="Identify Negative Beliefs"
-              >
+    <div className="min-h-screen relative px-6 py-12">
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm rounded-2xl"></div>
+      <div className="relative ">
+        <h1 className="text-4xl font-serif text-[#0F1912] mb-8">
+          My Resources
+        </h1>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
+                  className="w-6 h-6 text-teal-600"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-stone-700"
+                  viewBox="0 0 24 24"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <path d="M12 17h.01" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 2v20m0 0c-2.761 0-5-2.239-5-5V9h10v8c0 2.761-2.239 5-5 5zm0 0c2.761 0 5-2.239 5-5M7 9a5 5 0 1110 0"
+                  />
+                </svg>
+              </div>
+              <button className="w-10 h-10 border border-stone-300 rounded-lg flex items-center justify-center hover:bg-stone-50 transition-colors">
+                <svg
+                  className="w-5 h-5 text-stone-700"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
                 </svg>
               </button>
             </div>
-
-            <div className="p-6 space-y-8 ">
-              {messages.map((message, index) => (
-                <div key={index} className="flex justify-start">
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="text-left bg-[#FBFBFC]/80 backdrop-blur-md rounded-2xl rounded-tl-sm px-6 py-4 shadow-sm border border-white/40 hover:bg-[#FBFBFC] transition-colors cursor-pointer group"
-                  >
-                    <p className="text-stone-800 text-sm leading-relaxed mb-1">
-                      "{message.text}"
-                    </p>
-                    {message.author && (
-                      <p className="text-stone-500 text-[10px] italic">
-                        — {message.author}
-                      </p>
-                    )}
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <div className="backdrop-blur-md border-t border-stone-200/50 px-6 py-4">
-              <div className="flex items-center gap-3">
-                <input
-                  type="text"
-                  placeholder="Type your message..."
-                  className="flex-1 px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#4A7C59]/50 text-stone-900 placeholder-stone-400"
-                />
-                <button className="w-12 h-10 rounded-xl bg-[#4A7C59] hover:bg-[#3d6649] text-white flex items-center justify-center transition-all shadow-sm active:scale-95">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    />
-                  </svg>
-                </button>
+            <h3 className="text-xl font-semibold text-[#292524] mb-2">
+              Calm Place Exercise
+            </h3>
+            <p className="text-[#7A7A7A] text-sm leading-relaxed mb-4">
+              Access your saved safe place audio visualization.
+            </p>
+            <button className="text-[#4A7C59] text-sm font-medium hover:underline">
+              Listen Now
+            </button>
+          </div>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-12 h-12 bg-stone-100 rounded-xl flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-stone-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
               </div>
+              <button className="w-10 h-10 border border-stone-300 rounded-lg flex items-center justify-center hover:bg-stone-50 transition-colors">
+                <svg
+                  className="w-5 h-5 text-stone-700"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
             </div>
+            <h3 className="text-xl font-semibold text-[#292524] mb-2">
+              Bilateral Settings
+            </h3>
+            <p className="text-[#7A7A7A] text-sm leading-relaxed mb-4">
+              Customize your visual and audio stimulation preferences.
+            </p>
+            <button className="text-[#4A7C59] text-sm font-medium hover:underline">
+              Listen Now
+            </button>
+          </div>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-amber-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                  />
+                </svg>
+              </div>
+              <button className="w-10 h-10 border border-stone-300 rounded-lg flex items-center justify-center hover:bg-stone-50 transition-colors">
+                <svg
+                  className="w-5 h-5 text-stone-700"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </button>
+            </div>
+            <h3 className="text-xl font-semibold text-[#292524] mb-2">
+              My Story
+            </h3>
+            <p className="text-[#7A7A7A] text-sm leading-relaxed mb-4">
+              Access your saved safe place audio visualization.
+            </p>
+            <Link
+              href="/dashboard/resources/story"
+              className="text-[#4A7C59] text-sm font-medium hover:underline"
+            >
+              Listen Now
+            </Link>
           </div>
         </div>
       </div>
-
-      {/* Modal Overlay - Moved outside for stacking context */}
-      {isModalOpen && (
-        <div
-          onClick={() => setIsModalOpen(false)}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 transition-all overflow-y-auto"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-3xl shadow-2xl w-full max-w-lg my-auto border border-stone-200 overflow-hidden"
-          >
-            {/* Modal Header */}
-            <div className="p-8 pb-4 text-center border-b border-stone-100">
-              <h2 className="text-2xl font-serif text-stone-900 mb-2">
-                Meet Your EMDR Companion
-              </h2>
-              <p className="text-stone-600 text-sm">
-                Select the negative belief(s) that resonate with you:
-              </p>
-            </div>
-
-            {/* Modal Content - Belief Selection */}
-            <div className="px-8 py-6 max-h-[400px] overflow-y-auto space-y-3 bg-stone-50/60">
-              {beliefs.map((belief, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => toggleBelief(belief)}
-                  className={`w-full text-left px-5 py-4 rounded-xl border transition-all flex items-center justify-between group ${
-                    selectedBeliefs.includes(belief)
-                      ? "bg-[#4A7C59]/10 border-[#4A7C59] text-[#4A7C59] shadow-sm"
-                      : "bg-white border-stone-200 text-stone-700 hover:border-stone-400"
-                  }`}
-                >
-                  <span className="text-sm font-medium leading-snug">
-                    {belief}
-                  </span>
-                  <div
-                    className={`w-5 h-5 rounded-md border flex items-center justify-center transition-colors flex-shrink-0 ${
-                      selectedBeliefs.includes(belief)
-                        ? "bg-[#4A7C59] border-[#4A7C59]"
-                        : "bg-white border-stone-300"
-                    }`}
-                  >
-                    {selectedBeliefs.includes(belief) && (
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="white"
-                        strokeWidth="3"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    )}
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-8 space-y-3 border-t border-stone-100 bg-white">
-              <button
-                disabled={selectedBeliefs.length === 0}
-                onClick={() => setIsModalOpen(false)}
-                className={`w-full py-4 rounded-xl font-bold transition-all uppercase tracking-widest text-xs shadow-md active:scale-[0.98] ${
-                  selectedBeliefs.length > 0
-                    ? "bg-[#4A7C59] hover:bg-[#3d6649] text-white"
-                    : "bg-stone-200 text-stone-400 cursor-not-allowed"
-                }`}
-              >
-                Continue with selected belief
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+    </div>
   );
 }

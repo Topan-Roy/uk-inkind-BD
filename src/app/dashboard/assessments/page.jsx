@@ -5,7 +5,7 @@ import React from "react";
 
 export default function AssessmentsPage() {
   return (
-    <div className=" bg-[#9a9898] backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 border border-stone-600 w-full">
+    <div className=" bg-[#9a9898] min-h-screen backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 border border-white/20  w-full">
     <div className="w-full h-full">
         <div className="text-center mb-10">
             <h1 className="text-4xl font-serif text-[#0F1912] mb-3">
