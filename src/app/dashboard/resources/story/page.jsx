@@ -6,7 +6,7 @@ export default function StoryPage() {
     <div className="min-h-screen relative px-6 py-12 ">
       <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-2xl"></div>
       <div className="relative ">
-        <h1 className="text-4xl font-serif text-stone-800 mb-8 text-center">
+        <h1 className="text-4xl font-serif text-[#292524] mb-8 text-center">
           My Story
         </h1>
         <div className="bg-[#E3E6F0] backdrop-blur-md rounded-3xl shadow-lg p-8 mb-6">
@@ -19,8 +19,8 @@ export default function StoryPage() {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-serif text-stone-900">Thoughts</h2>
-              <p className="text-stone-600 text-sm">
+              <h2 className="text-2xl font-serif text-[#0F1912]">Thoughts</h2>
+              <p className="text-[#7A7A7A] text-sm">
                 Creating distance from our thoughts helps us see them clearly.
               </p>
             </div>
@@ -113,8 +113,8 @@ export default function StoryPage() {
               />
             </div>
             <div>
-              <h2 className="text-2xl font-serif text-stone-900">Emotions</h2>
-              <p className="text-stone-600 text-sm">
+              <h2 className="text-2xl font-serif text-[#0F1912]">Emotions</h2>
+              <p className="text-[#7A7A7A] text-sm">
                 Learning to feel and manage emotions safely.
               </p>
             </div>
