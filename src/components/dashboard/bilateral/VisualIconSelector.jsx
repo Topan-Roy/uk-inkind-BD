@@ -3,9 +3,9 @@ import React from "react";
 
 const iconList = [
   { id: "ball", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
-  { id: "feather", name: "Feather", img: "/homeImage/Ellipse 1002.png" },
-  { id: "star", name: "Star", img: "/homeImage/Ellipse 1002.png" },
-  { id: "leaf", name: "Leaf", img: "/homeImage/Ellipse 1002.png" },
+  { id: "feather", name: "Feather", img: "/homeImage/Frame (1).png" },
+  { id: "star", name: "Star", img: "/homeImage/Frame (2).png" },
+  { id: "leaf", name: "Leaf", img: "/homeImage/Frame (3).png" },
   { id: "ball2", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
   { id: "ball3", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
   { id: "ball4", name: "Ball", img: "/homeImage/Ellipse 1002.png" },

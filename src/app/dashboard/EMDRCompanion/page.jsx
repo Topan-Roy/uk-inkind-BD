@@ -23,28 +23,44 @@ export default function EMDRCompanion() {
     );
   };
 
-  const [messages] = useState([
+  const [activeMessageIndex, setActiveMessageIndex] = useState(null);
+  const [messages, setMessages] = useState([
     {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "Mike Preuss, Co-founder and CEO, Visible.vc",
+      text: "Which negative belief(s) do you find yourself thinking most often when you recall the memory?",
+      answer: null,
     },
     {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "Mike Preuss, Co-founder and CEO, Visible.vc",
+      text: "When you think of that belief and the memory, how much do you believe it now on a scale of 1-7 (where 1 is not at all and 7 is completely)?",
+      answer: null,
     },
     {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "",
+      text: "What positive belief would you like to have about yourself instead?",
+      answer: null,
     },
     {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "",
-    },
-    {
-      text: "Beautifully simple. Incredibly easy to use but can be customized to your hiring workflow and needs.",
-      author: "",
+      text: "Where do you feel this in your body right now as you focus on the memory?",
+      answer: null,
     },
   ]);
+
+  const handleMessageClick = (index) => {
+    setActiveMessageIndex(index);
+    if (messages[index].answer) {
+      setSelectedBeliefs(messages[index].answer.split(", "));
+    } else {
+      setSelectedBeliefs([]);
+    }
+    setIsModalOpen(true);
+  };
+
+  const submitAnswer = () => {
+    if (activeMessageIndex === null || selectedBeliefs.length === 0) return;
+    const newMessages = [...messages];
+    newMessages[activeMessageIndex].answer = selectedBeliefs.join(", ");
+    setMessages(newMessages);
+    setIsModalOpen(false);
+    setActiveMessageIndex(null);
+  };
 
   return (
     <>
@@ -94,43 +110,26 @@ export default function EMDRCompanion() {
                   </div>
                 </div>
               </div>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="w-10 h-10 flex items-center justify-center bg-stone-100 hover:bg-stone-200 rounded-full transition-colors shadow-sm group"
-                title="Identify Negative Beliefs"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-stone-700"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <path d="M12 17h.01" />
-                </svg>
-              </button>
             </div>
 
             <div className="p-6 space-y-8 ">
               {messages.map((message, index) => (
                 <div key={index} className="flex justify-start">
                   <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="text-left bg-[#FBFBFC]/80 backdrop-blur-md rounded-2xl rounded-tl-sm px-6 py-4 shadow-sm border border-white/40 hover:bg-[#FBFBFC] transition-colors cursor-pointer group"
+                    onClick={() => handleMessageClick(index)}
+                    className="text-left bg-[#FBFBFC]/80 backdrop-blur-md rounded-2xl rounded-tl-sm px-6 py-4 shadow-sm border border-white/40 hover:bg-[#FBFBFC] transition-all cursor-pointer group max-w-[80%]"
                   >
-                    <p className="text-stone-800 text-sm leading-relaxed mb-1">
+                    <p
+                      className={`text-stone-800 text-sm leading-relaxed ${
+                        message.answer ? "mb-2" : ""
+                      }`}
+                    >
                       "{message.text}"
                     </p>
-                    {message.author && (
-                      <p className="text-stone-500 text-[10px] italic">
-                        — {message.author}
+                    {message.answer && (
+                      <p className="text-[#4A7C59] text-[11px] font-medium italic border-t border-stone-100 pt-2 flex items-center gap-2">
+                        <span className="text-stone-400 not-italic">—</span>{" "}
+                        {message.answer}
                       </p>
                     )}
                   </button>
@@ -200,7 +199,7 @@ export default function EMDRCompanion() {
             <div className="p-8 space-y-3 border-t border-stone-100 bg-white">
               <button
                 disabled={selectedBeliefs.length === 0}
-                onClick={() => setIsModalOpen(false)}
+                onClick={submitAnswer}
                 className={`w-full py-4 rounded-xl font-bold transition-all uppercase tracking-widest text-xs shadow-md active:scale-[0.98] ${
                   selectedBeliefs.length > 0
                     ? "bg-[#4A7C59] hover:bg-[#3d6649] text-white"

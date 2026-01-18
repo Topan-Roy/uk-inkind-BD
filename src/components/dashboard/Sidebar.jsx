@@ -8,7 +8,7 @@ export default function Sidebar() {
   const navItems = [
     { name: "My EMDR", href: "/dashboard" },
     { name: "My Progress", href: "/dashboard/progress" },
-    { name: "My Homework", href: "/dashboard/homework" },
+    { name: "My Homework ", href: "/dashboard/homework" },
     { name: "My Resources", href: "/dashboard/resources" },
   ];
 
@@ -37,20 +37,25 @@ export default function Sidebar() {
                   !pathname.startsWith("/dashboard/assessments/activity")
                 : item.href === "/dashboard/progress"
                 ? pathname.startsWith("/dashboard/progress") ||
-                  pathname.startsWith("/dashboard/assessments/activity")||
+                  pathname.startsWith("/dashboard/assessments/activity") ||
                   pathname.startsWith("/dashboard/results")
                 : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block px-4 py-3 rounded-lg text-[16px] font-medium transition-colors ${
+                className={`flex items-center justify-between px-4 py-3 rounded-lg text-[16px] font-medium transition-colors ${
                   isActive
                     ? "bg-[#4A7C59] text-[#FBFBFC] shadow-sm"
                     : "text-black bg-[#FBFBFC] hover:bg-[#6B9071]/50 hover:text-[#FBFBFC]"
                 }`}
               >
-                {item.name}
+                <span>{item.name}</span>
+                {item.name.trim() === "My Homework" && (
+                  <span className="bg-white text-[#4A7C59] text-[10px] px-2 py-0.5 rounded-full font-bold shadow-sm">
+                    Prime+
+                  </span>
+                )}
               </Link>
             );
           })}

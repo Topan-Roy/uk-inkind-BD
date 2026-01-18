@@ -74,16 +74,16 @@ export default function CreateJourney() {
   return (
     <div className="flex items-center justify-center">
       <div className="w-full">
-        <div className="bg-[#9a9898] backdrop-blur-xl rounded-3xl shadow-2xl p-8 lg:p-12 border border-stone-600">
-          <div className="text-center mb-10">
-            <h1 className="text-4xl font-serif text-[#0F1912] mb-3">
+        <div className="bg-[#9a9898] backdrop-blur-xl rounded-3xl shadow-2xl p-5 lg:p-10 border border-white/20">
+          <div className="text-center">
+            <h1 className="text-4xl font-serif text-[#0F1912] ">
               Create Your Journey
             </h1>
             <p className="text-[#7A7A7A] text-base">
               Give your healing journey a name and choose a visual theme.
             </p>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div>
               <label className="block text-[#0F1912] text-sm mb-2">
                 Journey Name
@@ -93,7 +93,7 @@ export default function CreateJourney() {
                 value={journeyName}
                 onChange={(e) => setJourneyName(e.target.value)}
                 placeholder="e.g., Anxiety Management Journey"
-                className="w-full px-5 py-4 rounded-xl bg-white text-[#7A7A7A] placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-3 py-2 rounded-xl bg-white text-[#7A7A7A] placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div>
@@ -105,7 +105,7 @@ export default function CreateJourney() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder='e.g., Working through social anxiety and building confidence"'
-                className="w-full px-5 py-4 rounded-xl bg-white text-[#7A7A7A] placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-3 py-2 rounded-xl bg-white text-[#7A7A7A] placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
             <div>
@@ -117,7 +117,7 @@ export default function CreateJourney() {
                   <button
                     key={image.id}
                     onClick={() => setSelectedImage(image.id)}
-                    className={`aspect-square rounded-xl bg-white overflow-hidden hover:scale-105 transition-transform duration-200 relative ${
+                    className={` w-48 h-48 rounded-xl bg-white overflow-hidden hover:scale-105 transition-transform duration-200 relative ${
                       selectedImage === image.id
                         ? "ring-4 ring-emerald-600"
                         : ""
@@ -128,7 +128,6 @@ export default function CreateJourney() {
                       alt={image.name}
                       className="w-full h-full object-cover"
                     />
-                    {/* Checkmark for selected */}
                     {selectedImage === image.id && (
                       <div className="absolute top-2 right-2 w-7 h-7 bg-emerald-600 rounded-full flex items-center justify-center">
                         <svg
@@ -152,12 +151,10 @@ export default function CreateJourney() {
             </div>
           </div>
 
-          {/* Submit Button */}
-
           <div className="flex justify-end mt-10">
             <button
               onClick={() => router.push("/dashboard/assessments")}
-              className="bg-[#4A7C59] hover:bg-emerald-600 text-white px-8 py-4 rounded-xl font-medium transition-colors duration-200 shadow-lg"
+              className="bg-[#4A7C59] hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 shadow-lg"
             >
               Save & Enter Space
             </button>

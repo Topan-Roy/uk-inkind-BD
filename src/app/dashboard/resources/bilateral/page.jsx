@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import VisualEnvironmentSelector from "@/components/dashboard/bilateral/VisualEnvironmentSelector";
 import VisualIconSelector from "@/components/dashboard/bilateral/VisualIconSelector";
 import SoundSelector from "@/components/dashboard/bilateral/SoundSelector";
@@ -9,6 +10,7 @@ import BilateralDirectionSelector from "@/components/dashboard/bilateral/Bilater
 import { Save, Play } from "lucide-react";
 
 export default function BilateralSettingsPage() {
+  const router = useRouter();
   const [selections, setSelections] = useState({
     environment: 1,
     icon: "ball",
@@ -21,12 +23,17 @@ export default function BilateralSettingsPage() {
     setSelections((prev) => ({ ...prev, [key]: value }));
   };
 
+  const handleBeginSession = () => {
+    const params = new URLSearchParams(selections);
+    router.push(`/dashboard/resources/bilateral/session?${params.toString()}`);
+  };
+
   return (
     <div className="min-h-screen relative bg-fixed bg-center">
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-sm pointer-events-none rounded-2xl"></div>
 
-      <div className="relative z-10  py-12 px-6">
+      <div className="relative z-10 py-12 px-6">
         <div className="text-center mb-10">
           <h1 className="text-5xl font-serif text-[#0F1912] mb-3">
             Bilateral Stimulation
@@ -74,33 +81,14 @@ export default function BilateralSettingsPage() {
             <Save size={18} />
             Save Settings
           </button>
-          <button className="flex items-center gap-2 px-8 py-3 bg-[#4A7C59] text-white rounded-xl font-medium hover:bg-[#3d6649] transition-all shadow-lg active:scale-95 cursor-pointer">
+          <button
+            onClick={handleBeginSession}
+            className="flex items-center gap-2 px-8 py-3 bg-[#4A7C59] text-white rounded-xl font-medium hover:bg-[#3d6649] transition-all shadow-lg active:scale-95 cursor-pointer"
+          >
             <Play size={18} fill="currentColor" />
             Begin Session
           </button>
         </div>
-
-        {/* <div className="mt-8 text-center">
-          <Link
-            href="/dashboard/resources"
-            className="inline-flex items-center text-[#4A7C59] font-medium hover:underline opacity-80"
-          >
-            <svg
-              className="w-4 h-4 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7 7-7"
-              />
-            </svg>
-            Back to Resources
-          </Link>
-        </div> */}
       </div>
     </div>
   );

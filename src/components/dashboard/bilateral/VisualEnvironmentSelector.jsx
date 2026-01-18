@@ -1,36 +1,31 @@
 "use client";
 import React from "react";
 
-const environments = [
+export const environments = [
   {
     id: 1,
     name: "Mountain Sanctuary",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=250&fit=crop",
+    image: "/homeImage/img2.jpg",
   },
   {
     id: 2,
     name: "Sunset Beach",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=250&fit=crop",
+    image: "/homeImage/img1.jpg",
   },
   {
     id: 3,
     name: "Forest Glade",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop",
+    image: "/homeImage/img3.jpg",
   },
   {
     id: 4,
     name: "Starry Night",
-    image:
-      "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=250&fit=crop",
+    image: "/homeImage/img4.jpg",
   },
   {
     id: 5,
     name: "Calm Lake",
-    image:
-      "https://images.unsplash.com/photo-1439853949127-fa647821eba0?w=400&h=250&fit=crop",
+    image: "/homeImage/img5.jpg",
   },
 ];
 
