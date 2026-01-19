@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function EMDRCompanion() {
+  const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBeliefs, setSelectedBeliefs] = useState([]);
 
@@ -61,6 +63,9 @@ export default function EMDRCompanion() {
     setIsModalOpen(false);
     setActiveMessageIndex(null);
   };
+
+  // Check if all questions are answered
+  const allAnswered = messages.every((msg) => msg.answer !== null);
 
   return (
     <>
@@ -135,6 +140,34 @@ export default function EMDRCompanion() {
                   </button>
                 </div>
               ))}
+
+              {/* Continue Button */}
+              {allAnswered && (
+                <div className="flex justify-center pt-4">
+                  <button
+                    onClick={() =>
+                      router.push("/dashboard/EMDRCompanion/session")
+                    }
+                    className="bg-[#4A7C59] hover:bg-[#3d6649] text-white px-8 py-4 rounded-xl font-medium transition-all shadow-lg active:scale-95 flex items-center gap-2"
+                  >
+                    Continue to Session
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
