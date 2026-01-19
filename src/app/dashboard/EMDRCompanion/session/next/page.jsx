@@ -10,6 +10,9 @@ export default function CBTFormulation() {
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [selectedBeliefs, setSelectedBeliefs] = useState([]);
   const currentNodeRef = useRef(null);
+  const reactSectionRef = useRef(null);
+  const consequencesRef = useRef(null);
+  const superpowersRef = useRef(null);
 
   const timelineNodes = [
     {
@@ -129,6 +132,42 @@ export default function CBTFormulation() {
         type: "textarea",
       },
     },
+    {
+      id: "consequences",
+      title: "The Consequences",
+      subtitle: "Results of my actions",
+      modalContent: {
+        title: "Deep-Down Beliefs",
+        description:
+          "These are deep beliefs about yourself that might have been activated or try to think carefully about these and see if they match the current situation you chose.",
+        question:
+          "Here is a generic list to choose from - you can choose more than one:",
+        type: "checkbox",
+        options: [
+          "I don't deserve love",
+          "I am a bad person",
+          "I am terrible",
+          "I am worthless/inadequate",
+          "I am shameful",
+          "I am not lovable",
+          "I am not good enough",
+          "I deserve only bad things",
+        ],
+      },
+    },
+    {
+      id: "superpowers",
+      title: "Your Superpowers",
+      subtitle: "Strengths & Resilience",
+      modalContent: {
+        title: "Your Superpowers",
+        description:
+          "What strengths did you use or can you use in this situation?",
+        question: "What makes you resilient?",
+        example: '"I am self-aware" or "I am brave enough to seek help"',
+        type: "textarea",
+      },
+    },
   ];
 
   const getCurrentNodeIndex = () => {
@@ -203,6 +242,33 @@ export default function CBTFormulation() {
   const currentReactNodeIndex = getCurrentReactNodeIndex();
   const showReactSection = allTimelineComplete;
 
+  useEffect(() => {
+    if (showReactSection && reactSectionRef.current) {
+      reactSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [showReactSection]);
+
+  useEffect(() => {
+    if (answers.behaviors?.completed && consequencesRef.current) {
+      consequencesRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [answers.behaviors?.completed]);
+
+  useEffect(() => {
+    if (answers.consequences?.completed && superpowersRef.current) {
+      superpowersRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [answers.consequences?.completed]);
+
   return (
     <div className="min-h-screen relative ">
       {/* Content */}
@@ -230,12 +296,12 @@ export default function CBTFormulation() {
                 {/* Section Title */}
                 <div className="text-center mb-10 mt-12">
                   <h2
-                    className={`font-serif text-stone-900 transition-all duration-500 ${
+                    className={`font-serif text-[#0F1912] text-xl transition-all duration-500 ${
                       isCompleted
-                        ? "text-lg"
+                        ? "text-[#0F1912] text-xl "
                         : isCurrent
-                        ? "text-3xl"
-                        : "text-xl"
+                        ? "text-[#0F1912] text-xl"
+                        : "text-[#0F1912] text-xl"
                     }`}
                   >
                     {node.section}
@@ -254,18 +320,18 @@ export default function CBTFormulation() {
                     <div
                       className={`rounded-full border-4 py-1 px-10  border-[#4A7C59] text-center shadow-2xl transition-all duration-500 ${
                         isCompleted
-                          ? "bg-[#e6c8d9] px-20 py-8"
+                          ? "bg-[#e6c8d9] text-[#0F1912] text-xl px-20 py-8"
                           : isCurrent
-                          ? "bg-white backdrop-blur-sm px-40 py-20"
-                          : "bg-white backdrop-blur-sm px-24 py-12"
+                          ? "bg-white backdrop-blur-sm px-40 py-20 text-[#0F1912] text-xl"
+                          : "bg-white backdrop-blur-sm px-24 py-12 text-[#0F1912] text-xl"
                       }`}
                     >
                       <h3
                         className={`font-serif text-stone-900 transition-all duration-500 ${
                           isCompleted
-                            ? "text-2xl"
+                            ? "text-xl"
                             : isCurrent
-                            ? "text-5xl mb-4"
+                            ? "text-4xl mb-4"
                             : "text-3xl mb-3"
                         }`}
                       >
@@ -300,21 +366,19 @@ export default function CBTFormulation() {
 
           {/* How I React Section */}
           {showReactSection && (
-            <div className="mt-16 pb-16 ">
+            <div ref={reactSectionRef} className="mt-16 pb-16 min-h-screen">
               {/* Connecting line from last timeline node */}
               <div className="flex justify-center mb-8">
                 <div className="w-0.5 h-20 bg-[#4A7C59]"></div>
               </div>
-
               {/* Section Title */}
               <div className="text-center mt-30 mb-52">
                 <h2 className="text-3xl font-serif text-stone-900">
                   How I React
                 </h2>
               </div>
-
               {/* Responsive Triangular Layout with SVG Cycle - Standard Upright Pyramid */}
-              <div className="relative w-full max-w-2xl mx-auto   rounded-2xl px-10 py-10 -mt-10 mb-50">
+              <div className="relative w-full max-w-2xl mx-auto  min-h-screen rounded-2xl px-10 py-10 mt-10 mb-20">
                 {/* SVG Layer for Curved Connections - Responsive ViewBox */}
                 <svg
                   className="absolute inset-0  w-full h-full pointer-events-none z-0"
@@ -403,9 +467,7 @@ export default function CBTFormulation() {
                       <motion.div
                         layout
                         className={`rounded-3xl p-5 border-4 border-[#4A7C59] flex flex-col items-center justify-center text-center shadow-xl transition-all duration-500 aspect-[3/2] w-full ${
-                          answers.thoughts?.completed
-                            ? "bg-white"
-                            : "bg-white/95 backdrop-blur-sm"
+                          answers.thoughts?.completed ? "bg-white" : "bg-white"
                         }`}
                       >
                         <h3 className="font-serif text-stone-900 text-2xl md:text-3xl mb-1 md:mb-2">
@@ -438,7 +500,7 @@ export default function CBTFormulation() {
                             className={`rounded-3xl py-10 px-3 border-4 border-[#4A7C59] flex flex-col items-center justify-center text-center shadow-xl transition-all duration-500 aspect-[3/2] w-full ${
                               answers.feelings?.completed
                                 ? "bg-white"
-                                : "bg-white/95 backdrop-blur-sm"
+                                : "bg-white"
                             }`}
                           >
                             <h3 className="font-serif text-stone-900 text-2xl md:text-3xl mb-1 md:mb-2">
@@ -474,11 +536,7 @@ export default function CBTFormulation() {
               flex flex-col items-center justify-center text-center
               shadow-xl transition-all duration-500
               aspect-[3/2] w-full
-              ${
-                answers.behaviors?.completed
-                  ? "bg-white"
-                  : "bg-white/95 backdrop-blur-sm"
-              }
+              ${answers.behaviors?.completed ? "bg-white" : "bg-white"}
             `}
                           >
                             <h3 className="font-serif text-stone-900 text-2xl md:text-3xl mb-1 md:mb-2">
@@ -495,15 +553,88 @@ export default function CBTFormulation() {
                 </div>
               </div>
 
-              {/* Complete Button */}
-              {allCompleted && (
-                <div className="flex justify-center mt-16 animate-in fade-in duration-700">
-                  <button
-                    onClick={() => router.push("/dashboard")}
-                    className="bg-[#4A7C59] hover:bg-[#3d6649] text-white mt-20 px-25 py-3 rounded-xl font-medium transition-all shadow-lg active:scale-95"
+              {/* Final Sections: Consequences & Superpowers */}
+              {answers.behaviors?.completed && (
+                <div
+                  ref={consequencesRef}
+                  className="min-h-screen py-20 px-8 flex flex-col items-center justify-center"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="w-full max-w-lg"
                   >
-                    Complete Journey
-                  </button>
+                    <button
+                      onClick={() => handleOpenModal("consequences")}
+                      className="w-full relative hover:scale-[1.05] transition-all duration-300"
+                    >
+                      <div
+                        className={`rounded-3xl border-4  border-[#4A7C59] p-5 text-center shadow-2xl transition-all duration-500 ${
+                          answers.consequences?.completed
+                            ? "bg-[#e6f4ea]"
+                            : "bg-white"
+                        }`}
+                      >
+                        <h3 className="font-serif text-4xl text-[#0F1912] mb-4">
+                          The Consequences
+                        </h3>
+                        <p className="text-stone-600 italic text-xl">
+                          Results of my actions
+                        </p>
+                      </div>
+                    </button>
+                  </motion.div>
+                </div>
+              )}
+
+              {answers.consequences?.completed && (
+                <div
+                  ref={superpowersRef}
+                  className="min-h-screen py-20 px-8 flex flex-col items-center justify-center"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="w-full max-w-lg"
+                  >
+                    <button
+                      onClick={() => handleOpenModal("superpowers")}
+                      className="w-full relative hover:scale-[1.05] transition-all duration-300"
+                    >
+                      <div
+                        className={`rounded-3xl border-4 border-[#4A7C59] p-5 text-center shadow-2xl transition-all duration-500 ${
+                          answers.superpowers?.completed
+                            ? "bg-[#fff9c4]"
+                            : "bg-white/90 backdrop-blur-md"
+                        }`}
+                      >
+                        <h3 className="font-serif text-4xl text-[#0F1912] mb-4">
+                          Your Superpowers
+                        </h3>
+                        <p className="text-stone-600 italic text-xl">
+                          Strengths & Resilience
+                        </p>
+                      </div>
+                    </button>
+                  </motion.div>
+
+                  {allCompleted && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 }}
+                      className="mt-20"
+                    >
+                      <button
+                        onClick={() => router.push("/dashboard")}
+                        className="bg-[#4A7C59] hover:bg-[#3d6649] text-white px-32 py-5 rounded-2xl font-serif text-2xl transition-all shadow-2xl active:scale-95 flex items-center gap-3"
+                      >
+                        Complete Journey 
+                      </button>
+                    </motion.div>
+                  )}
                 </div>
               )}
             </div>
