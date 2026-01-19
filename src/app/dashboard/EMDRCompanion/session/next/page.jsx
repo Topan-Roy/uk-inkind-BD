@@ -252,7 +252,7 @@ export default function CBTFormulation() {
                     className="relative hover:scale-105 transition-all duration-300"
                   >
                     <div
-                      className={`rounded-full border-4  border-[#4A7C59] text-center shadow-2xl transition-all duration-500 ${
+                      className={`rounded-full border-4 py-1 px-10  border-[#4A7C59] text-center shadow-2xl transition-all duration-500 ${
                         isCompleted
                           ? "bg-[#e6c8d9] px-20 py-8"
                           : isCurrent
@@ -286,7 +286,7 @@ export default function CBTFormulation() {
 
                 {/* Connecting Line */}
                 {index < timelineNodes.length - 1 && (
-                  <div className="flex justify-center mt-10 mb-4">
+                  <div className="flex justify-center mt-10 mb-4 ">
                     <div
                       className={`bg-[#4A7C59] transition-all duration-500 ${
                         isCompleted ? "w-0.5 h-24" : "w-0.5 h-32"
@@ -300,24 +300,24 @@ export default function CBTFormulation() {
 
           {/* How I React Section */}
           {showReactSection && (
-            <div className="mt-16 pb-16">
+            <div className="mt-16 pb-16 ">
               {/* Connecting line from last timeline node */}
               <div className="flex justify-center mb-8">
                 <div className="w-0.5 h-20 bg-[#4A7C59]"></div>
               </div>
 
               {/* Section Title */}
-              <div className="text-center mb-12">
+              <div className="text-center mt-30 mb-52">
                 <h2 className="text-3xl font-serif text-stone-900">
                   How I React
                 </h2>
               </div>
 
               {/* Responsive Triangular Layout with SVG Cycle - Standard Upright Pyramid */}
-              <div className="relative w-full max-w-2xl mx-auto h-[450px] md:h-[550px] ">
+              <div className="relative w-full max-w-2xl mx-auto   rounded-2xl px-10 py-10 -mt-10 mb-50">
                 {/* SVG Layer for Curved Connections - Responsive ViewBox */}
                 <svg
-                  className="absolute inset-0 w-full h-full pointer-events-none z-0"
+                  className="absolute inset-0  w-full h-full pointer-events-none z-0"
                   viewBox="0 0 100 100"
                   preserveAspectRatio="none"
                 >
@@ -339,7 +339,6 @@ export default function CBTFormulation() {
                     {/* Approx Coords: T(50, 20) -> F(20, 80) */}
                     {answers.thoughts?.completed && (
                       <motion.path
-                        d="M 42 25 Q 10 50 22 72" // Arc Left - Wider
                         vectorEffect="non-scaling-stroke"
                         fill="transparent"
                         stroke="#4A7C59"
@@ -355,7 +354,6 @@ export default function CBTFormulation() {
                     {/* Approx Coords: F(20, 80) -> B(80, 80) */}
                     {answers.feelings?.completed && (
                       <motion.path
-                        d="M 30 90 Q 50 100 70 90" // Arc Bottom - Lower
                         vectorEffect="non-scaling-stroke"
                         fill="transparent"
                         stroke="#4A7C59"
@@ -371,7 +369,6 @@ export default function CBTFormulation() {
                     {/* Approx Coords: B(80, 80) -> T(50, 20) */}
                     {answers.feelings?.completed && (
                       <motion.path
-                        d="M 78 72 Q 90 50 58 25" // Arc Right - Wider
                         vectorEffect="non-scaling-stroke"
                         fill="transparent"
                         stroke="#4A7C59"
@@ -392,7 +389,7 @@ export default function CBTFormulation() {
                 {/* Nodes Container */}
 
                 {/* Thoughts: Top Center */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] md:w-auto flex justify-center z-20">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] md:w-auto flex justify-center z-20 ">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -405,7 +402,7 @@ export default function CBTFormulation() {
                     >
                       <motion.div
                         layout
-                        className={`rounded-[50%] border-4 border-[#4A7C59] flex flex-col items-center justify-center text-center shadow-xl transition-all duration-500 aspect-[3/2] w-full ${
+                        className={`rounded-3xl p-5 border-4 border-[#4A7C59] flex flex-col items-center justify-center text-center shadow-xl transition-all duration-500 aspect-[3/2] w-full ${
                           answers.thoughts?.completed
                             ? "bg-white"
                             : "bg-white/95 backdrop-blur-sm"
@@ -423,7 +420,7 @@ export default function CBTFormulation() {
                 </div>
 
                 {/* Feelings: Bottom Left */}
-                <div className="absolute bottom-0 left-0 w-[45%] flex justify-start pl-4 z-20">
+                <div className="absolute bottom-2left-0 w-[45%] flex justify-start pl-4 z-20 px-10 py-20">
                   <AnimatePresence>
                     {answers.thoughts?.completed && (
                       <motion.div
@@ -438,7 +435,7 @@ export default function CBTFormulation() {
                           className="hover:scale-105 transition-all duration-300 relative z-10 w-full"
                         >
                           <div
-                            className={`rounded-[50%] border-4 border-[#4A7C59] flex flex-col items-center justify-center text-center shadow-xl transition-all duration-500 aspect-[3/2] w-full ${
+                            className={`rounded-3xl py-10 px-3 border-4 border-[#4A7C59] flex flex-col items-center justify-center text-center shadow-xl transition-all duration-500 aspect-[3/2] w-full ${
                               answers.feelings?.completed
                                 ? "bg-white"
                                 : "bg-white/95 backdrop-blur-sm"
@@ -458,7 +455,7 @@ export default function CBTFormulation() {
                 </div>
 
                 {/* Behaviors: Bottom Right */}
-                <div className="absolute bottom-0 right-0 w-[45%] flex justify-end pr-4 z-20">
+                <div className="absolute bottom-30 right-20 left-[45%] justify-end pr-10 z-30 px-20 py-20">
                   <AnimatePresence>
                     {answers.feelings?.completed && (
                       <motion.div
@@ -473,7 +470,7 @@ export default function CBTFormulation() {
                           className="hover:scale-105 transition-all duration-300 relative z-10 w-full"
                         >
                           <div
-                            className={`rounded-[50%] border-4 border-[#4A7C59]
+                            className={`rounded-3xl py-10 px-3 border-4 border-[#4A7C59]
               flex flex-col items-center justify-center text-center
               shadow-xl transition-all duration-500
               aspect-[3/2] w-full
@@ -503,7 +500,7 @@ export default function CBTFormulation() {
                 <div className="flex justify-center mt-16 animate-in fade-in duration-700">
                   <button
                     onClick={() => router.push("/dashboard")}
-                    className="bg-[#4A7C59] hover:bg-[#3d6649] text-white px-25 py-3 rounded-xl font-medium transition-all shadow-lg active:scale-95"
+                    className="bg-[#4A7C59] hover:bg-[#3d6649] text-white mt-20 px-25 py-3 rounded-xl font-medium transition-all shadow-lg active:scale-95"
                   >
                     Complete Journey
                   </button>
