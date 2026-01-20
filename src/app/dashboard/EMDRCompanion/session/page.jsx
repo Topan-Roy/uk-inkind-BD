@@ -64,7 +64,7 @@ export default function EMDRSession() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-300 to-stone-400 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-stone-300 to-stone-400 flex items-center justify-center p-3 rounded-2xl">
       {/* Main Container */}
       <div className="relative w-full ">
         {/* Video Container */}
