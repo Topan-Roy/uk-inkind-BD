@@ -270,11 +270,11 @@ export default function CBTFormulation() {
   }, [answers.consequences?.completed]);
 
   return (
-    <div className="min-h-screen relative ">
+    <div className="min-h-screen relativebg-white/40 ">
       {/* Content */}
-      <div className="relative z-10 min-h-screen overflow-y-auto">
+      <div className="relative z-10 min-h-screen overflow-y-auto bg-white/40 rounded-2xl">
         {/* Header - Fixed at top */}
-        <div className="sticky top-0 bg-white/40 backdrop-blur-sm pt-8 pb-4 px-8 z-20">
+        <div className="sticky top-0  backdrop-blur-sm pt-8 pb-4 px-8 z-20">
           <h1 className="text-2xl font-serif text-stone-900">
             My CBT Formulation
           </h1>
