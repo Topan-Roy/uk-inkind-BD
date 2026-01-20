@@ -628,10 +628,14 @@ export default function CBTFormulation() {
                       className="mt-20"
                     >
                       <button
-                        onClick={() => router.push("/dashboard")}
-                        className="bg-[#4A7C59] hover:bg-[#3d6649] text-white px-32 py-5 rounded-2xl font-serif text-2xl transition-all shadow-2xl active:scale-95 flex items-center gap-3"
+                        onClick={() =>
+                          router.push(
+                            "/dashboard/EMDRCompanion/session/next/calm-space"
+                          )
+                        }
+                        className="bg-[#4A7C59] hover:bg-[#3d6649] text-white px-4 py-6 rounded-2xl font-serif text-2xl transition-all shadow-2xl active:scale-95 flex items-center gap-3"
                       >
-                        Complete Journey 
+                        Complete Journey
                       </button>
                     </motion.div>
                   )}
