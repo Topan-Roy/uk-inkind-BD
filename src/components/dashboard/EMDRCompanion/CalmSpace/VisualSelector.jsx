@@ -1,14 +1,12 @@
 import React from "react";
 import { Upload } from "lucide-react";
 import VisualCard from "./VisualCard";
-
 const VisualSelector = ({ visuals, selectedVisualId, onSelectVisual }) => {
   return (
     <div className="bg-white/40 backdrop-blur-md rounded-3xl p-3 shadow-xl border border-white/20">
       <h2 className="text-xl font-serif mb-3 text-[#0F1912] tracking-tight">
         Visual
       </h2>
-
       <div className="flex flex-wrap gap-5 mb-5">
         {visuals.map((visual) => (
           <VisualCard
@@ -19,7 +17,6 @@ const VisualSelector = ({ visuals, selectedVisualId, onSelectVisual }) => {
           />
         ))}
       </div>
-
       <div className="relative group overflow-hidden rounded-3xl">
         <div
           className="rounded-[40px] p-5 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm transition-all"
@@ -38,7 +35,6 @@ const VisualSelector = ({ visuals, selectedVisualId, onSelectVisual }) => {
           <p className="text-stone-500 text-sm font-sans tracking-wide">
             PNG or GIF (max. 5MB)
           </p>
-
           <input
             type="file"
             className="absolute inset-0 opacity-0 cursor-pointer"

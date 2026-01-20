@@ -1,12 +1,10 @@
 import React from "react";
-
 const PlaceDescription = ({ description, onDescriptionChange }) => {
   return (
     <div className="bg-white/40 backdrop-blur-md rounded-3xl p-3 shadow-xl ">
       <h2 className="text-xl font-serif mb-3 text-[#0F1912] tracking-tight">
         Describe this place
       </h2>
-
       <div className="relative group">
         <textarea
           value={description}

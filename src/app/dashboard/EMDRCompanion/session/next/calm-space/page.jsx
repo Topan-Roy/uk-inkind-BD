@@ -5,7 +5,6 @@ import VisualSelector from "@/components/dashboard/EMDRCompanion/CalmSpace/Visua
 import PlaceDescription from "@/components/dashboard/EMDRCompanion/CalmSpace/PlaceDescription";
 import MoodSetter from "@/components/dashboard/EMDRCompanion/CalmSpace/MoodSetter";
 import PreviewPane from "@/components/dashboard/EMDRCompanion/CalmSpace/PreviewPane";
-
 const MeditationSpaceApp = () => {
   const router = useRouter();
   const [selectedVisual, setSelectedVisual] = useState({
@@ -15,7 +14,6 @@ const MeditationSpaceApp = () => {
     alt: "Mountains",
   });
   const [description, setDescription] = useState();
-
   const visuals = [
     {
       id: 1,
@@ -37,14 +35,10 @@ const MeditationSpaceApp = () => {
       label: "Behaviours",
     },
   ];
-
   return (
     <div className="min-h-screen relative p-4 md:p-8 font-serif overflow-x-hidden rounded-2xl">
-      {/* Background Overlay */}
       <div className="absolute inset-0 bg-white/20 backdrop-blur-xl pointer-events-none rounded-2xl" />
-
       <div className="relative z-10  flex flex-col">
-        {/* Header Section */}
         <div className="rounded-3xl  text-center">
           <h1 className="text-3xl  font-serif text-[#0F1912] mb-2 tracking-tight">
             Create Your Calm Space
@@ -54,25 +48,19 @@ const MeditationSpaceApp = () => {
             visual that resonates with you.
           </p>
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
-          {/* Left Column: Input Sections */}
           <div className="space-y-3 h-full">
             <VisualSelector
               visuals={visuals}
               selectedVisualId={selectedVisual?.id}
               onSelectVisual={setSelectedVisual}
             />
-
             <PlaceDescription
               description={description}
               onDescriptionChange={setDescription}
             />
-
             <MoodSetter />
           </div>
-
-          {/* Right Column: Dynamic Preview */}
           <div className="h-full min-h-[600px] flex flex-col">
             <PreviewPane
               description={description}
@@ -80,8 +68,6 @@ const MeditationSpaceApp = () => {
             />
           </div>
         </div>
-
-        {/* Bottom Navigation */}
         <div className="mt-12 flex justify-end gap-6 pb-8">
           <button
             onClick={() => router.back()}

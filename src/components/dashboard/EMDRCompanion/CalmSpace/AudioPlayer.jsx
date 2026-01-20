@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Play, Pause } from "lucide-react";
-
 const AudioPlayer = ({
   title,
   durationInSeconds,
@@ -16,9 +15,7 @@ const AudioPlayer = ({
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
-
   const currentTime = (progress / 100) * durationInSeconds;
-
   const handleReplace = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -26,7 +23,6 @@ const AudioPlayer = ({
       onReplace();
     }
   };
-
   return (
     <div
       className={`flex items-center gap-6 rounded-2xl p-5 ${
@@ -40,12 +36,11 @@ const AudioPlayer = ({
         className="w-14 h-14 bg-[#4A7C59] hover:bg-[#3d6649] rounded-full flex items-center justify-center transition-all duration-300 shadow-lg active:scale-90 flex-shrink-0"
       >
         {isPlaying ? (
-          <Pause className="w-10 h-5 text-white" fill="currentColor" />
+          <Pause className="w-12 h-6 text-white" fill="currentColor" />
         ) : (
-          <Play className="w-10 h-5 text-white ml-0.5" fill="currentColor" />
+          <Play className="w-12 h-6 text-white ml-0.5" fill="currentColor" />
         )}
       </button>
-
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-end mb-1">
           <p
@@ -56,14 +51,12 @@ const AudioPlayer = ({
             {title}
           </p>
         </div>
-
         <div className="relative h-2.5 bg-green-200/30 rounded-full overflow-hidden group-hover:h-3 transition-all">
           <div
             className="absolute h-full bg-[#4A7C59] transition-all duration-500 rounded-full"
             style={{ width: `${progress}%` }}
           />
         </div>
-
         <div className="flex justify-between mt-1.5">
           <span className="text-[10px] font-sans text-[#1E3224] font-medium opacity-80">
             {formatTime(Math.floor(currentTime))}
@@ -73,7 +66,6 @@ const AudioPlayer = ({
           </span>
         </div>
       </div>
-
       {isReplaceable && (
         <button
           onClick={handleReplace}

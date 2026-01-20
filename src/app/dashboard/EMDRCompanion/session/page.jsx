@@ -1,14 +1,12 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-
 export default function EMDRSession() {
   const router = useRouter();
   const [checkedItems, setCheckedItems] = useState({});
   const [videoEnded, setVideoEnded] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-
   const questions = [
     {
       id: 1,
@@ -38,7 +36,6 @@ export default function EMDRSession() {
       ],
     },
   ];
-
   const handleCheck = (questionId, optionIndex) => {
     setCheckedItems({
       ...checkedItems,
@@ -46,7 +43,6 @@ export default function EMDRSession() {
         !checkedItems[`${questionId}-${optionIndex}`],
     });
   };
-
   const handlePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -57,17 +53,13 @@ export default function EMDRSession() {
       setIsPlaying(!isPlaying);
     }
   };
-
   const handleVideoEnd = () => {
     setVideoEnded(true);
     setIsPlaying(false);
   };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-300 to-stone-400 flex items-center justify-center p-3 rounded-2xl">
-      {/* Main Container */}
       <div className="relative w-full ">
-        {/* Video Container */}
         <div className="relative">
           <video
             ref={videoRef}
@@ -77,8 +69,6 @@ export default function EMDRSession() {
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
           />
-
-          {/* Play/Pause Button Overlay */}
           {!isPlaying && !videoEnded && (
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <button
@@ -95,24 +85,17 @@ export default function EMDRSession() {
               </button>
             </div>
           )}
-
-          {/* Checklist Card - Shows after video ends */}
           {videoEnded && (
             <div className="absolute right-6 top-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl p-6 w-80 animate-in fade-in slide-in-from-right-4 duration-500">
               <h2 className="text-lg font-serif text-stone-900 mb-6">
                 Session Reflection
               </h2>
-
-              {/* Questions */}
               <div className="space-y-6 max-h-[500px] overflow-y-auto">
                 {questions.map((question) => (
                   <div key={question.id}>
-                    {/* Question */}
                     <h3 className="font-semibold text-stone-900 mb-3 text-sm">
                       {question.id}. {question.question}
                     </h3>
-
-                    {/* Options */}
                     <div className="space-y-2">
                       {question.options.map((option, index) => (
                         <label
@@ -136,8 +119,6 @@ export default function EMDRSession() {
                   </div>
                 ))}
               </div>
-
-              {/* Submit Button */}
               <button
                 onClick={() =>
                   router.push("/dashboard/EMDRCompanion/session/next")
