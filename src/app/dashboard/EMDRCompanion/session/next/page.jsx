@@ -271,29 +271,23 @@ export default function CBTFormulation() {
 
   return (
     <div className="min-h-screen relativebg-white/40 ">
-      {/* Content */}
+   
       <div className="relative z-10 min-h-screen overflow-y-auto bg-white/40 rounded-2xl">
-        {/* Header - Fixed at top */}
+     
         <div className="sticky top-0  backdrop-blur-sm pt-8 pb-4 px-8 z-20">
           <h1 className="text-2xl font-serif text-stone-900">
             My CBT Formulation
           </h1>
         </div>
-
-        {/* Timeline Container - More spacing */}
         <div className="px-8 py-16 max-w-5xl mx-auto">
-          {/* Timeline Nodes */}
           {timelineNodes.map((node, index) => {
             const isCompleted = answers[node.id]?.completed;
             const isCurrent = index === currentNodeIndex;
             const isFuture = index > currentNodeIndex;
-
-            // Don't show future nodes
             if (isFuture && !allTimelineComplete) return null;
 
             return (
               <div key={node.id} className="relative mb-12">
-                {/* Section Title */}
                 <div className="text-center mb-10 mt-12">
                   <h2
                     className={`font-serif text-[#0F1912] text-xl transition-all duration-500 ${
@@ -307,8 +301,6 @@ export default function CBTFormulation() {
                     {node.section}
                   </h2>
                 </div>
-
-                {/* Node */}
                 <div
                   ref={isCurrent ? currentNodeRef : null}
                   className="flex justify-center"
@@ -349,8 +341,6 @@ export default function CBTFormulation() {
                     </div>
                   </button>
                 </div>
-
-                {/* Connecting Line */}
                 {index < timelineNodes.length - 1 && (
                   <div className="flex justify-center mt-10 mb-4 ">
                     <div
@@ -363,23 +353,17 @@ export default function CBTFormulation() {
               </div>
             );
           })}
-
-          {/* How I React Section */}
           {showReactSection && (
             <div ref={reactSectionRef} className="mt-16 pb-16 min-h-screen">
-              {/* Connecting line from last timeline node */}
               <div className="flex justify-center mb-8">
                 <div className="w-0.5 h-20 bg-[#4A7C59]"></div>
               </div>
-              {/* Section Title */}
               <div className="text-center mt-30 mb-52">
                 <h2 className="text-3xl font-serif text-stone-900">
                   How I React
                 </h2>
               </div>
-              {/* Responsive Triangular Layout with SVG Cycle - Standard Upright Pyramid */}
               <div className="relative w-full max-w-2xl mx-auto  min-h-screen rounded-2xl px-10 py-10 mt-10 mb-20">
-                {/* SVG Layer for Curved Connections - Responsive ViewBox */}
                 <svg
                   className="absolute inset-0  w-full h-full pointer-events-none z-0"
                   viewBox="0 0 100 100"
