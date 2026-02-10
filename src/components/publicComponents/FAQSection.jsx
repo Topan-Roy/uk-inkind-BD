@@ -42,7 +42,7 @@ const faqData = [
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className="mb-5">
-      <div 
+      <div
         className={`bg-white rounded-xl border border-gray-200 shadow-[0px_2px_8px_rgba(0,0,0,0.04)] overflow-hidden transition-all duration-300 ${isOpen ? 'ring-1 ring-[#568261]/20' : ''}`}
       >
         <button
@@ -88,7 +88,7 @@ const FAQSection = () => {
     <section className="bg-[#FCF9F4] py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

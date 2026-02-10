@@ -1,4 +1,6 @@
+import FAQSection from '@/components/publicComponents/FAQSection';
 import HowThisActually from '@/components/publicComponents/HowThisActually';
+import InKindSection from '@/components/publicComponents/InKindSection';
 import PricingSection from '@/components/publicComponents/PricingSection';
 import ReadytoRewind from '@/components/publicComponents/ReadytoRewind';
 import Therapyshouldn from '@/components/publicComponents/Therapyshouldn';
@@ -13,6 +15,8 @@ const GetStarted = () => {
             <Therapyshouldn></Therapyshouldn>
             <WhatIncluded></WhatIncluded>
             <PricingSection></PricingSection>
+            <InKindSection></InKindSection>
+            <FAQSection></FAQSection>
         </div>
     );
 };

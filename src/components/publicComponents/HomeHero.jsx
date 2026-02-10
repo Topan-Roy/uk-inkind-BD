@@ -83,7 +83,7 @@ const HomeHero = () => {
             className="mt-10"
           >
             <Link href="/GetStarted">
-              <button className="bg-[#56825e] hover:bg-[#456b4c] text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-[#56825e]/30 active:scale-95">
+              <button className=" px-10 py-3 text-[#FFFFFF] text-xl font-semibold rounded-2xl border-[2px] border-[#2b2b2b] bg-gradient-to-b from-[#6f8f79] to-[#3e6f55] shadow-[inset_0_2px_4px_rgba(255,255,255,0.25),_0_2px_0_#1f1f1f] hover:brightness-110 active:translate-y-[2px] active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),_0_2px_0_#1f1f1f] transition-all duration-150">
                 Get Started Today
               </button>
             </Link>

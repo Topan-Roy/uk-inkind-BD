@@ -2,17 +2,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const InKindSection = ({ 
-  title = "What InKind Actually Is", 
+const InKindSection = ({
+  title = "What InKind Actually Is",
   description = "Think of it as therapy that escaped from the clinic and learned how to have fun. We’ve taken evidence-based treatments that usually cost £100+ per session and turned them into an interactive digital experience that feels more like using your favourite wellness app than sitting in a waiting room.",
-  bgImage = "/homeImage/inkindImage.png" 
+  bgImage = "/homeImage/inkindImage.png"
 }) => {
-  
-  return (
-    <section className="relative w-full min-h-[85vh] md:min-h-[85vh] flex items-center justify-center  py-20 px-6">
-      
 
-      <div 
+  return (
+    <section className="relative w-full min-h-[75vh] md:min-h-[75vh] flex items-center justify-center  py-20 px-6">
+
+
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
         style={{ backgroundImage: `url(${bgImage})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", }}
       >
@@ -20,7 +20,7 @@ const InKindSection = ({
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
-        
+
         <motion.div
           initial={{ x: -150, y: 50, opacity: 0, rotate: -20 }}
           whileInView={{ x: 0, y: 0, opacity: 1, rotate: 0 }}
@@ -31,7 +31,7 @@ const InKindSection = ({
 
         </motion.div>
 
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +42,7 @@ const InKindSection = ({
         </motion.h2>
 
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -54,7 +54,7 @@ const InKindSection = ({
 
       </div>
 
-      <motion.div 
+      <motion.div
         initial={{ x: -100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}

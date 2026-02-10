@@ -5,8 +5,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const HowEMDRWorks = ({ 
-  desktopImage = "/homeImage/image1.png" 
+const HowEMDRWorks = ({
+  desktopImage = "/homeImage/image1.png"
 }) => {
   const steps = [
     {
@@ -39,13 +39,13 @@ const HowEMDRWorks = ({
   return (
 
     <section className="relative w-full py-10 bg-[#FCF9F4] md:bg-transparent flex flex-col items-center justify-center overflow-hidden">
-      
+
       <div
         className="absolute inset-0 z-0 hidden md:block bg-cover bg-center bg-no-repeat opacity-30"
         style={{
           backgroundImage: `url(${desktopImage})`,
           backgroundRepeat: "no-repeat",
-           backgroundSize: "cover",
+          backgroundSize: "cover",
         }}
       />
 
@@ -112,7 +112,7 @@ const HowEMDRWorks = ({
           <motion.button
             whileHover={{ scale: 1.05, backgroundColor: "#3D6346" }}
             whileTap={{ scale: 0.95 }}
-            className="text-white px-10 py-4 rounded-lg text-lg font-medium shadow-lg tracking-wide"
+            className=" px-10 py-3 text-[#FFFFFF] text-xl font-semibold rounded-2xl border-[2px] border-[#2b2b2b] bg-gradient-to-b from-[#6f8f79] to-[#3e6f55] shadow-[inset_0_2px_4px_rgba(255,255,255,0.25),_0_2px_0_#1f1f1f] hover:brightness-110 active:translate-y-[2px] active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),_0_2px_0_#1f1f1f] transition-all duration-150"
             style={{ backgroundColor: "#4A7C59", marginBottom: "20px" }}
           >
             Start Your Journey

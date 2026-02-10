@@ -4,11 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const ReadytoRewind = ({ 
-  title = "Ready to Rewind and Reprocess?", 
-  subtitle = "Think of it as therapy that escaped from the clinic and learned how to have fun. Evidence-based EMDR treatment turned into an interactive digital experience.", 
-  buttonText = "Get Started Today",
-  bgImage = "/homeImage/emdr backround image 3 1.png" 
+const ReadytoRewind = ({
+  title = "Ready to Rewind and Reprocess?",
+  subtitle = "Think of it as therapy that escaped from the clinic and learned how to have fun. Evidence-based EMDR treatment turned into an interactive digital experience.",
+  buttonText = "Register & Start",
+  bgImage = "/homeImage/emdr backround image 3 1.png"
 }) => {
   return (
     <section className="relative w-full min-h-[85vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#fdfdfb]">
@@ -20,7 +20,7 @@ const ReadytoRewind = ({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="absolute inset-0 z-0 scale-105" 
+        className="absolute inset-0 z-0 scale-105"
       />
 
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -31,7 +31,7 @@ const ReadytoRewind = ({
           className="flex flex-col items-center gap-4 md:gap-6"
         >
 
-        
+
           <h1 className="max-w-2xl mx-auto text-4xl md:text-7xl lg:text-7xl font-serif text-[#0F1912] leading-wide">
             {title}
           </h1>
@@ -40,15 +40,15 @@ const ReadytoRewind = ({
             {subtitle}
           </p>
         </motion.div>
-          <Link href="/authentication/login">
-          <motion.button 
+        <Link href="/authentication/login">
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-[#56825e] hover:bg-[#456b4c] text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-[#56825e]/30 active:scale-95 mt-5"
+            className=" px-8 py-3 mt-3 text-white text-xl font-semibold rounded-2xl border-[2px] border-[#2b2b2b] bg-gradient-to-b from-[#6f8f79] to-[#3e6f55] shadow-[inset_0_2px_4px_rgba(255,255,255,0.25),_0_2px_0_#1f1f1f] hover:brightness-110 active:translate-y-[2px] active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),_0_2px_0_#1f1f1f] transition-all duration-150"
           >
             {buttonText}
           </motion.button>
-          </Link>
+        </Link>
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent pointer-events-none" />

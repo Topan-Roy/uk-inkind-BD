@@ -2,18 +2,20 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "How it Works", href: "/how-it-works" },
+    { name: "Evidence", href: "/how-it-works" },
+    { name: "How it Works", href: "/GetStarted" },
   ];
 
   return (
@@ -38,7 +40,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-800 hover:text-[#56825e] transition-colors font-medium"
+                className={`${pathname === link.href
+                  ? "text-[#56825e] font-bold"
+                  : "text-gray-800 font-medium"
+                  } hover:text-[#56825e] transition-colors`}
               >
                 {link.name}
               </Link>
@@ -46,8 +51,19 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:block">
-            <Link href="/login">
-              <button className="bg-[#56825e] text-white px-7 py-2.5 rounded-xl font-medium hover:bg-[#456b4c] transition-all shadow-md active:scale-95">
+            <Link href="/authentication/login">
+              <button className=" px-8 py-2
+  text-[#FFFFFF]
+  text-lg
+  font-semibold
+  rounded-2xl
+  border-[2px] border-[#2b2b2b]
+  bg-gradient-to-b from-[#6f8f79] to-[#3e6f55]
+  shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),_0_2px_0_#1f1f1f]
+  hover:brightness-110
+  active:translate-y-[2px]
+  active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),_0_2px_0_#1f1f1f]
+  transition-all duration-150">
                 Start Healing
               </button>
             </Link>
@@ -91,16 +107,21 @@ const Navbar = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-[#56825e] rounded-xl"
+                    className={`block px-4 py-3 text-base font-medium rounded-xl hover:bg-gray-50 hover:text-[#56825e] ${pathname === link.href
+                      ? "text-[#56825e] bg-gray-50 bg-opacity-50"
+                      : "text-gray-800"
+                      }`}
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
               <div className="pt-4 px-4">
-                <button className="w-full bg-[#56825e] text-white px-6 py-3.5 rounded-xl font-medium shadow-md">
-                  Start Healing
-                </button>
+                <Link href="/authentication/login">
+                  <button className="w-full bg-[#56825e] text-white px-6 py-3.5 rounded-xl font-medium shadow-[4px_4px_0px_0px_rgba(50,50,50,0.8)] border-2 border-[#323232] active:shadow-[2px_2px_0px_0px_rgba(50,50,50,0.8)] active:translate-x-[2px] active:translate-y-[2px]">
+                    Start Healing
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>

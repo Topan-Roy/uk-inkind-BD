@@ -2,9 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 
 const PricingSection = () => {
+  const router = useRouter();
   const plans = [
     {
       name: "Community Access",
@@ -88,11 +90,10 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`relative bg-white rounded-[20px] p-6 flex flex-col transition-all duration-300 w-full ${
-                plan.recommended
-                  ? "border-[2.5px] border-[#4A7C59] scale-105 z-10 shadow-xl"
-                  : "border border-gray-200 shadow-sm"
-              }`}
+              className={`relative bg-white rounded-[20px] p-6 flex flex-col transition-all duration-300 w-full ${plan.recommended
+                ? "border-[2.5px] border-[#4A7C59] scale-105 z-10 shadow-xl"
+                : "border border-gray-200 shadow-sm"
+                }`}
             >
               {plan.recommended && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FDC700] rounded-2xl   px-4 py-0.5 z-20">
@@ -144,11 +145,11 @@ const PricingSection = () => {
 
               <div className="mt-20">
                 <button
-                  className={`w-full py-2.5 rounded-lg text-[16px] font-medium border-[1.5px] border-[#4A7C59] transition-all  ${
-                    plan.recommended
-                      ? "bg-white border-[#4A7C59] text-[#4A7C59] hover:bg-[#456b4c] hover:text-white"
-                      : "bg-white border-gray-300 text-gray-700 hover:border-[#4A7C59] hover:text-[#4A7C59]"
-                  }`}
+                  onClick={() => router.push('/assessment')}
+                  className={`w-full py-2.5 rounded-lg text-[16px] font-medium border-[1.5px] border-[#4A7C59] transition-all  ${plan.recommended
+                    ? "bg-white border-[#4A7C59] text-[#4A7C59] hover:bg-[#456b4c] hover:text-white"
+                    : "bg-white border-gray-300 text-gray-700 hover:border-[#4A7C59] hover:text-[#4A7C59]"
+                    }`}
                 >
                   {plan.buttonText}
                 </button>
