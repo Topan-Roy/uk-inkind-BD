@@ -10,6 +10,8 @@ const bgImages = {
     "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070&auto=format&fit=crop",
   "/dashboard/homework":
     "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
+  "/dashboard/emotions":
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
   "/dashboard/resources":
     "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop",
 };
@@ -41,9 +43,8 @@ export default function DashboardLayout({ children }) {
         <div className="flex flex-col h-full overflow-hidden">
           {!isSessionPage && <Header />}
           <main
-            className={`flex-1 overflow-y-auto ${
-              isSessionPage ? "p-0" : "p-8 pt-2"
-            }`}
+            className={`flex-1 overflow-y-auto ${isSessionPage ? "p-0" : "p-8 pt-2"
+              }`}
           >
             {children}
           </main>

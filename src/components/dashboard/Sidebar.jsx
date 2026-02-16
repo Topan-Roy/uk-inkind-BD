@@ -30,25 +30,27 @@ export default function Sidebar() {
             const isActive =
               item.href === "/dashboard"
                 ? (pathname === "/dashboard" ||
-                    pathname === "/dashboard/assessments" ||
-                    pathname.startsWith("/dashboard/new-roadmap") ||
-                    pathname.startsWith("/dashboard/EMDRCompanion") ||
-                    pathname.startsWith("/dashboard/AssessmentsF")) &&
-                  !pathname.startsWith("/dashboard/assessments/activity")
+                  pathname === "/dashboard/assessments" ||
+                  pathname.startsWith("/dashboard/new-roadmap") ||
+                  pathname.startsWith("/dashboard/EMDRCompanion") ||
+                  pathname.startsWith("/dashboard/AssessmentsF")) &&
+                !pathname.startsWith("/dashboard/assessments/activity")
                 : item.href === "/dashboard/progress"
-                ? pathname.startsWith("/dashboard/progress") ||
+                  ? pathname.startsWith("/dashboard/progress") ||
                   pathname.startsWith("/dashboard/assessments/activity") ||
                   pathname.startsWith("/dashboard/results")
-                : pathname.startsWith(item.href);
+                  : item.href === "/dashboard/homework"
+                    ? pathname.startsWith("/dashboard/homework") ||
+                    pathname.startsWith("/dashboard/emotions")
+                    : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center justify-between px-4 py-3 rounded-lg text-[16px] font-medium transition-colors ${
-                  isActive
-                    ? "bg-[#4A7C59] text-[#FBFBFC] shadow-sm"
-                    : "text-black bg-[#FBFBFC] hover:bg-[#6B9071]/50 hover:text-[#FBFBFC]"
-                }`}
+                className={`flex items-center justify-between px-4 py-3 rounded-lg text-[16px] font-medium transition-colors ${isActive
+                  ? "bg-[#4A7C59] text-[#FBFBFC] shadow-sm"
+                  : "text-black bg-[#FBFBFC] hover:bg-[#6B9071]/50 hover:text-[#FBFBFC]"
+                  }`}
               >
                 <span>{item.name}</span>
                 {item.name.trim() === "My Homework" && (
