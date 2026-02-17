@@ -41,7 +41,8 @@ export default function Sidebar() {
                   pathname.startsWith("/dashboard/results")
                   : item.href === "/dashboard/homework"
                     ? pathname.startsWith("/dashboard/homework") ||
-                    pathname.startsWith("/dashboard/emotions")
+                    pathname.startsWith("/dashboard/emotions") ||
+                    pathname.startsWith("/dashboard/behaviours")
                     : pathname.startsWith(item.href);
             return (
               <Link

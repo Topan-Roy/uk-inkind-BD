@@ -7,11 +7,13 @@ export default function EMDRCategories() {
       title: "Behaviours",
       description: "Transform what you're doing or not doing",
       image: "/homeImage/gril.jpg",
+      link: "/dashboard/behaviours",
     },
     {
       title: "Thoughts",
       description: "Understanding and reshaping your thinking",
       image: "/homeImage/thu.jpg",
+      link: "/dashboard/thoughts", // Added link for Thoughts category
     },
     {
       title: "Emotions",
