@@ -13,7 +13,7 @@ export default function EMDRCategories() {
       title: "Thoughts",
       description: "Understanding and reshaping your thinking",
       image: "/homeImage/thu.jpg",
-      link: "/dashboard/thoughts", // Added link for Thoughts category
+      link: "/dashboard/thoughts",
     },
     {
       title: "Emotions",
