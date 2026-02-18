@@ -466,7 +466,7 @@ export default function CBTFormulation() {
                 </div>
 
                 {/* Feelings: Bottom Left */}
-                <div className="absolute bottom-2left-0 w-[45%] flex justify-start pl-4 z-20 px-10 py-20">
+                <div className="absolute bottom-2left-0 w-[45%] flex justify-start pl-4 z-20 px-30 py-20">
                   <AnimatePresence>
                     {answers.thoughts?.completed && (
                       <motion.div
@@ -501,7 +501,7 @@ export default function CBTFormulation() {
                 </div>
 
                 {/* Behaviors: Bottom Right */}
-                <div className="absolute bottom-30 right-20 left-[45%] justify-end pr-10 z-30 px-20 py-20">
+                <div className="absolute left-[45%] justify-end pr-10 z-30 px-40 py-20">
                   <AnimatePresence>
                     {answers.feelings?.completed && (
                       <motion.div
