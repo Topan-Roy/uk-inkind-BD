@@ -36,7 +36,7 @@ export default function EmotionsLanding() {
             title: "EMDR 2.0",
             description: "A grounding technique to help when emotions feel overwhelming.",
             icon: <Layers className="w-3.5 h-3.5" />,
-            link: "#",
+            link: "/dashboard/emotions/emdr",
         },
         {
             id: "drawing",
