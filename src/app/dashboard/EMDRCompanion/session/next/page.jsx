@@ -312,7 +312,7 @@ export default function CBTFormulation() {
                     <div
                       className={`rounded-full border-4 py-1 px-10  border-[#4A7C59] text-center shadow-2xl transition-all duration-500 ${
                         isCompleted
-                          ? "bg-[#e6c8d9] text-[#0F1912] text-xl px-20 py-8"
+                          ? "bg-[#f6f2f4] text-[#0F1912] text-xl px-20 py-8"
                           : isCurrent
                           ? "bg-white backdrop-blur-sm px-40 py-20 text-[#0F1912] text-xl"
                           : "bg-white backdrop-blur-sm px-24 py-12 text-[#0F1912] text-xl"
@@ -556,7 +556,7 @@ export default function CBTFormulation() {
                       <div
                         className={`rounded-3xl border-4  border-[#4A7C59] p-5 text-center shadow-2xl transition-all duration-500 ${
                           answers.consequences?.completed
-                            ? "bg-[#e6f4ea]"
+                            ? "bg-[#f4f4f4]"
                             : "bg-white"
                         }`}
                       >
@@ -590,7 +590,7 @@ export default function CBTFormulation() {
                       <div
                         className={`rounded-3xl border-4 border-[#4A7C59] p-5 text-center shadow-2xl transition-all duration-500 ${
                           answers.superpowers?.completed
-                            ? "bg-[#fff9c4]"
+                            ? "bg-[#f5f5f2]"
                             : "bg-white/90 backdrop-blur-md"
                         }`}
                       >

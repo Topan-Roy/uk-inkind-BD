@@ -28,9 +28,7 @@ export default function EMDRCategories() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category, index) => (
             <Link key={index} href={category.link || "#"}>
-              <div
-                className="bg-[#FBFBFC] backdrop-blur-md rounded-3xl shadow-sm hover:shadow-lg p-10 text-center transition-all duration-300 cursor-pointer border border-white/40 group active:scale-95"
-              >
+              <div className="bg-[#FBFBFC] backdrop-blur-md rounded-3xl shadow-sm hover:shadow-lg p-10 text-center transition-all duration-300 cursor-pointer border border-white/40 group active:scale-95">
                 <div className="mb-8 flex justify-center">
                   <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:border-[#6E967A] transition-colors duration-300">
                     <img
