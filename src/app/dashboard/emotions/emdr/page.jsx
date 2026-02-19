@@ -8,7 +8,7 @@ import { ArrowLeft, Play } from "lucide-react";
 export default function EMDRGames() {
     const games = [
         { id: "battleship", title: "battleship" },
-        { id: "stroop", title: "Stroop test" },
+        { id: "stroop", title: "Stroop test", link: "/dashboard/emotions/emdr/stroop" },
         { id: "memory", title: "Pattern Memory" },
         { id: "tetris", title: "tetris" },
     ];
@@ -38,7 +38,7 @@ export default function EMDRGames() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                         >
-                            <Link href="#">
+                            <Link href={game.link || "#"}>
                                 <div className="group bg-white/60 hover:bg-white rounded-[20px] border border-white/40 p-5 flex items-center justify-between transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
                                     <div className="flex items-center gap-6">
                                         {/* Avatar Container */}
