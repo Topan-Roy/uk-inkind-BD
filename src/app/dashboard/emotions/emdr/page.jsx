@@ -9,7 +9,7 @@ export default function EMDRGames() {
     const games = [
         { id: "battleship", title: "battleship" },
         { id: "stroop", title: "Stroop test", link: "/dashboard/emotions/emdr/stroop" },
-        { id: "memory", title: "Pattern Memory" },
+        { id: "memory", title: "Pattern Memory", link: "/dashboard/emotions/emdr/memory" },
         { id: "tetris", title: "tetris" },
     ];
 

@@ -115,7 +115,7 @@ export default function StroopTest() {
 
                     {/* Titles */}
                     <div className="text-center mb-10">
-                        <h1 className="text-4xl md:text-6xl text-[#292524] font-['Playfair_Display'] tracking-tight mb-2">
+                        <h1 className="text-4xl  text-[#292524]  mb-2">
                             The Stroop Test
                         </h1>
                         <p className="text-[1.1em] text-[#78716c] font-['Playfair_Display'] italic tracking-[3px] opacity-70">
