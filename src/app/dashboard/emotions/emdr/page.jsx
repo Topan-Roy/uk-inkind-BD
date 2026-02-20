@@ -7,7 +7,7 @@ import { ArrowLeft, Play } from "lucide-react";
 
 export default function EMDRGames() {
     const games = [
-        { id: "battleship", title: "battleship" },
+        { id: "battleship", title: "Backwards Challenge", link: "/dashboard/emotions/emdr/backwards" },
         { id: "stroop", title: "Stroop test", link: "/dashboard/emotions/emdr/stroop" },
         { id: "memory", title: "Pattern Memory", link: "/dashboard/emotions/emdr/memory" },
         { id: "tetris", title: "tetris" },
@@ -20,12 +20,7 @@ export default function EMDRGames() {
 
                 {/* Header with Back Button */}
                 <div className="py-10 text-center relative font-serif">
-                    <Link
-                        href="/dashboard/emotions"
-                        className="absolute left-8 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-800 hover:border-stone-800 transition-all"
-                    >
-                        <ArrowLeft size={18} />
-                    </Link>
+
                     <h1 className="text-[28px] text-[#000000]">EMDR 2.0</h1>
                 </div>
 
