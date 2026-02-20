@@ -20,15 +20,15 @@ export default function EmotionsLanding() {
             title: "Spiral Technique",
             description: "A grounding technique to help when emotions feel overwhelming.",
             icon: <Music className="w-3.5 h-3.5" />,
-            link: "#",
+            link: "/dashboard/emotions/spiral-technique",
         },
         {
             id: "video",
             type: "Video",
-            title: "hunder and Lightning",
+            title: "Thunder and Lightning",
             description: "A grounding technique to help when emotions feel overwhelming.",
             icon: <Video className="w-3.5 h-3.5" />,
-            link: "#",
+            link: "/dashboard/emotions/thunder-lightning",
         },
         {
             id: "emdr",
