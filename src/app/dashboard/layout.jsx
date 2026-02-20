@@ -16,6 +16,8 @@ const bgImages = {
     "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
   "/dashboard/resources":
     "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop",
+  "/dashboard/thoughts":
+    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop",
 };
 
 export default function DashboardLayout({ children }) {
