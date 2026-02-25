@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Pause, Play, X } from "lucide-react";
 import { environments } from "@/components/dashboard/bilateral/VisualEnvironmentSelector";
+import { iconList } from "@/components/dashboard/bilateral/VisualIconSelector";
 
 function SessionContent() {
   const searchParams = useSearchParams();
@@ -31,73 +32,68 @@ function SessionContent() {
 
   const variants = {
     horizontal: {
-      x: ["-40vw", "40vw"],
+      x: ["-48vw", "48vw"],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "reverse",
           duration: duration,
-          ease: "easeInOut",
+          ease: "linear",
         },
       },
     },
     vertical: {
-      y: ["-30vh", "30vh"],
+      y: ["-45vh", "45vh"],
       transition: {
         y: {
           repeat: Infinity,
           repeatType: "reverse",
           duration: duration,
-          ease: "easeInOut",
+          ease: "linear",
         },
       },
     },
     "diagonal-up": {
-      x: ["-40vw", "40vw"],
-      y: ["30vh", "-30vh"],
+      x: ["-48vw", "48vw"],
+      y: ["45vh", "-45vh"],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "reverse",
           duration: duration,
-          ease: "easeInOut",
+          ease: "linear",
         },
         y: {
           repeat: Infinity,
           repeatType: "reverse",
           duration: duration,
-          ease: "easeInOut",
+          ease: "linear",
         },
       },
     },
     "diagonal-down": {
-      x: ["-40vw", "40vw"],
-      y: ["-30vh", "30vh"],
+      x: ["-48vw", "48vw"],
+      y: ["-45vh", "45vh"],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "reverse",
           duration: duration,
-          ease: "easeInOut",
+          ease: "linear",
         },
         y: {
           repeat: Infinity,
           repeatType: "reverse",
           duration: duration,
-          ease: "easeInOut",
+          ease: "linear",
         },
       },
     },
   };
 
   const getIcon = () => {
-    const iconMap = {
-      ball: "/homeImage/Ellipse 1002.png",
-      feather: "/homeImage/Frame (1).png",
-      star: "/homeImage/Frame (2).png",
-      leaf: "/homeImage/Frame (3).png",
-    };
-    return iconMap[settings.icon] || iconMap.ball;
+    const icon = iconList.find((i) => i.id === settings.icon);
+    return icon ? icon.img : "/homeImage/Ellipse 1002.png";
   };
 
   return (

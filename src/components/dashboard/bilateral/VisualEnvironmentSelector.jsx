@@ -38,11 +38,10 @@ export default function VisualEnvironmentSelector({ selectedId, onSelect }) {
           <div
             key={env.id}
             onClick={() => onSelect(env.id)}
-            className={`flex-shrink-0 w-48 h-32 rounded-2xl overflow-hidden relative cursor-pointer border-2 transition-all ${
-              selectedId === env.id
+            className={`flex-shrink-0 w-48 h-32 rounded-2xl overflow-hidden relative cursor-pointer border-2 transition-all ${selectedId === env.id
                 ? "border-[#4A7C59] scale-95"
                 : "border-transparent opacity-80 hover:opacity-100"
-            }`}
+              }`}
           >
             <img
               src={env.image}

@@ -13,7 +13,7 @@ export default function BilateralSettingsPage() {
   const router = useRouter();
   const [selections, setSelections] = useState({
     environment: 1,
-    icon: "ball",
+    icon: "ball2",
     sound: "gentle",
     speed: "medium",
     direction: "horizontal",

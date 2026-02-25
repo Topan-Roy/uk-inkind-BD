@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
 
-const iconList = [
-  { id: "ball", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
+export const iconList = [
+  { id: "ball", name: "Ball 1", img: "/homeImage/Ellipse 1002.png" },
+  { id: "ball2", name: "AI Ball", img: "/homeImage/image 1375.png" },
   { id: "feather", name: "Feather", img: "/homeImage/Frame (1).png" },
   { id: "star", name: "Star", img: "/homeImage/Frame (2).png" },
   { id: "leaf", name: "Leaf", img: "/homeImage/Frame (3).png" },
-  { id: "ball2", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
-  { id: "ball3", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
-  { id: "ball4", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
-  { id: "ball5", name: "Ball", img: "/homeImage/Ellipse 1002.png" },
 ];
 
 export default function VisualIconSelector({ selectedId, onSelect }) {
@@ -26,10 +23,9 @@ export default function VisualIconSelector({ selectedId, onSelect }) {
             key={item.id}
             onClick={() => onSelect(item.id)}
             className={`flex flex-col items-center justify-center p-4 aspect-square rounded-2xl cursor-pointer transition-all
-              ${
-                selectedId === item.id
-                  ? "bg-white shadow-md border-2 border-dashed border-blue-400"
-                  : "bg-white/60 hover:bg-white/80"
+              ${selectedId === item.id
+                ? "bg-white shadow-md border-2 border-dashed border-blue-400"
+                : "bg-white/60 hover:bg-white/80"
               }
             `}
           >
